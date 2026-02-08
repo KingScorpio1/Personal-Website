@@ -73,6 +73,58 @@
         from {opacity: .4} 
         to {opacity: 1}
     }
+
+    /* --- MODAL STYLES (NOW OUTSIDE MEDIA QUERY) --- */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2000; /* Increased to ensure it's on top */
+        background-color: rgba(0,0,0,0.92);
+        display: none; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 90%;
+        max-width: 960px;
+        aspect-ratio: 16 / 9;
+        background: #000;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #fff;
+        font-size: 42px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 100;
+        text-shadow: 0 0 6px rgba(0,0,0,0.8);
+    }
+
+    /* Specific Mobile Tweaks */
+    @media (max-width: 640px) {
+        .modal-content {
+            width: 96%;
+            border-radius: 8px;
+        }
+        .close-btn {
+            font-size: 32px;
+            top: 5px;
+            right: 12px;
+        }
+    }
 </style>
 
 <div style="text-align: center; padding: 2rem;">
@@ -124,32 +176,15 @@
 </div>
 
 <!-- Video Modal -->
-<div id="videoModal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.9);">
-    <span onclick="closeVideoModal()" style="position:absolute; top:15px; right:35px; color:#f1f1f1; font-size:40px; font-weight:bold; cursor:pointer;">×</span>
-    <div style="margin:auto; display:block; width:80%; max-width:900px; margin-top:5%;">
-        <iframe id="videoIframe" style="width:100%; height:500px; border:none;" allowfullscreen></iframe>
+<div id="videoModal" class="modal-overlay">
+    <div class="modal-content">
+        <div id="modalTitle" style="color: white; padding: 10px 20px; font-size: 1.2rem; background: #1a1a1a;"></div>
+        
+        <span onclick="closeVideoModal()" class="close-btn">×</span>
+        
+        <iframe id="videoIframe" style="width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
     </div>
 </div>
-
-<script>
-function openVideoModal(url, title) {
-    document.getElementById('videoIframe').src = url;
-    document.getElementById('videoModal').style.display = 'block';
-}
-
-function closeVideoModal() {
-    document.getElementById('videoModal').style.display = 'none';
-    document.getElementById('videoIframe').src = ''; // stop video
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-    var modal = document.getElementById('videoModal');
-    if (event.target == modal) {
-        closeVideoModal();
-    }
-}
-</script>
 
 <!-- JavaScript for Auto-Play & Manual Slideshow -->
 <script>
@@ -209,6 +244,30 @@ window.onclick = function(event) {
         slideTimers[slideshowId] = setTimeout(function() {
             plusSlides(1, slideshowId); // Automatically click "Next"
         }, 4000); // 4000ms = 4 seconds
+    }
+
+    function openVideoModal(url, title) {
+        // 1. Set the video source
+        document.getElementById('videoIframe').src = url;
+        
+        // 2. Set the dynamic title
+        document.getElementById('modalTitle').innerText = title;
+        
+        // 3. Show the modal using 'flex' to keep it centered
+        document.getElementById('videoModal').style.display = 'flex';
+    }
+
+    function closeVideoModal() {
+        document.getElementById('videoModal').style.display = 'none';
+        document.getElementById('videoIframe').src = ''; 
+        document.getElementById('modalTitle').innerText = ''; // Clear title on close
+    }
+    // Keep this to allow clicking outside to close
+    window.onclick = function(event) {
+        var modal = document.getElementById('videoModal');
+        if (event.target == modal) {
+            closeVideoModal();
+        }
     }
 </script>
 {% endblock %}
