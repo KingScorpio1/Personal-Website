@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Resume - {{ resume.name }}{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <div class="sidebar">
+        <div class="profile-picture">
+            <!-- You'll need to add a profile picture to your static/img/ folder -->
+            <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="{{ resume.name }}">
+        </div>
+        <div class="contact-info section">
+            <h2>Contact</h2>
+            <p><strong>Phone:</strong> {{ resume.contact.phone }}</p>
+            <p><strong>Email:</strong> <a href="mailto:{{ resume.contact.email }}">{{ resume.contact.email }}</a></p>
+            <p><strong>Address:</strong> {{ resume.contact.address }}</p>
+        </div>
+
+        <div class="expertise section">
+            <h2>Expertise</h2>
+            <h3>Technical Skills</h3>
+            <ul>
+                {% for skill in resume.technical_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+            <h3>Languages</h3>
+            <ul>
+                {% for lang in resume.languages %}
+                <li>{{ lang.name }} ({{ lang.level }})</li>
+                {% endfor %}
+            </ul>
+            <h3>Tools</h3>
+            <ul>
+                {% for tool in resume.tools %}
+                <li>{{ tool }}</li>
+                {% endfor %}
+            </ul>
+            <h3>Professional Skills</h3>
+            <ul>
+                {% for skill in resume.professional_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="education section">
+            <h2>Education</h2>
+            {% for edu in resume.education %}
+            <h3>{{ edu.degree }}</h3>
+            <p>{{ edu.institution }}</p>
+            <p>{{ edu.year }}</p>
+            <p>GPA: {{ edu.gpa }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>{{ resume.name }}</h1>
+            <h2>{{ resume.title }}</h2>
+        </header>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <p>{{ resume.summary }}</p>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            {% for job in resume.experience %}
+            <div class="job-entry">
+                <h3>{{ job.job_title }} at {{ job.company }}</h3>
+                <p class="job-meta">{{ job.location }} | {{ job.years }}</p>
+                <ul>
+                    {% for item in job.description %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            {% for project in resume.projects %}
+            <div class="project-entry">
+                <h3>{{ project.title }}</h3>
+                <p>
+                    {% if project.role %}Role: {{ project.role }}{% endif %}
+                    {% if project.award %} | Award: {{ project.award }}{% endif %}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

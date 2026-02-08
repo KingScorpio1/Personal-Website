@@ -1,0 +1,112 @@
+{
+  "name": "Sule Smith",
+  "title": "Mechanical Engineer",
+  "summary": "I'm a seasoned mechanical engineer passionate about tackling challenges and driving innovation. Proficient in CAD and design software, I excel at turning concepts into tangible solutions. With a collaborative approach, I thrive on teamwork and communication across diverse backgrounds. Eager to stay abreast of new technologies, I'm committed to personal and professional growth. Excited to further contribute value and innovation to the company.",
+  "contact": {
+    "phone": "+886909802690",
+    "email": "smithsule63@gmail.com",
+    "address": "701台南市東區府東街203號"
+  },
+  "technical_skills": [
+    "AutoCAD Designer",
+    "Fusion 360 Designer",
+    "Solidworks",
+    "LabView Oriented",
+    "Robotics Technician",
+    "Driver's License"
+  ],
+  "languages": [
+    {"name": "English", "level": "Native"},
+    {"name": "Mandarin", "level": "Intermediate"},
+    {"name": "Spanish", "level": "Basic"},
+    {"name": "Japanese", "level": "Basic"}
+  ],
+  "tools": [
+    "Canva",
+    "MS Office",
+    "GPT",
+    "Adobe Illustrator"
+  ],
+  "professional_skills": [
+    "Teamwork",
+    "Time Management",
+    "Communication",
+    "Problem-Solving",
+    "Adaptability"
+  ],
+  "education": [
+    {
+      "institution": "Southern Taiwan University of Science and Technology",
+      "degree": "Master of Mechatronics Engineering",
+      "year": "2024 (expected)",
+      "gpa": "4.0"
+    },
+    {
+      "institution": "Kun Shan University",
+      "degree": "Bachelor's in Mechanical Engineering",
+      "year": "2020–2024",
+      "gpa": "3.70"
+    }
+  ],
+  "experience": [
+    {
+      "job_title": "Part-time Internship",
+      "company": "iDABET",
+      "location": "Kaohsiung, Taiwan",
+      "years": "Mar 2025–Aug 2025",
+      "description": [
+        "Gained knowledge of semiconductor processes including PVD, CVD, and ALD.",
+        "Gained hands-on experience with advanced semiconductor coating techniques."
+      ]
+    },
+    {
+      "job_title": "Part-time Teacher",
+      "company": "Southern Taiwan",
+      "location": "Tainan, Taiwan",
+      "years": "May 2020–Present",
+      "description": [
+        "Integrated applied STEM projects to enhance English learning.",
+        "Organized and coordinated events for customers with the institute staff.",
+        "Maintained clear communication with students and parents on progress."
+      ]
+    },
+    {
+      "job_title": "Assistant Engineer",
+      "company": "Tairong Industrial Factory",
+      "location": "Tainan, Taiwan",
+      "years": "Dec 2023–Aug 2024",
+      "description": [
+        "Proficient in SolidWorks, with expertise in 3D modeling and engineering drawings for seamless manufacturing.",
+        "Experienced in PLC programming and control logic design for industrial automation.",
+        "Skilled in maintaining and troubleshooting jobsite machinery to reduce downtime and boost efficiency."
+      ]
+    },
+    {
+      "job_title": "Sales Associate",
+      "company": "Ashley's Furniture",
+      "location": "Belize City, Belize",
+      "years": "Aug 2018–Jan 2020",
+      "description": [
+        "Solved problems effectively both independently and in teams.",
+        "Maintained a friendly, punctual, and hardworking attitude.",
+        "Efficiently assembled and disassembled all showroom furniture."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "T.E.L. Robot Combat competition",
+      "role": "Team captain",
+      "award": "Certificate of excellence"
+    },
+    {
+      "title": "Allring robotic innovative competition",
+      "role": "Team captain",
+      "award": "Certificate of excellence"
+    },
+    {
+      "title": "Development of Hexapod Assembler bot",
+      "role": "Personal R&D"
+    }
+  ]
+}

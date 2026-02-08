@@ -1,0 +1,132 @@
+.resume-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #1e1e1e; /* Darker background for the resume card */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #2c2c2c; /* Slightly lighter dark for sidebar */
+    padding: 30px;
+    color: #f0f0f0;
+}
+
+.profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6200ee; /* Accent color border */
+}
+
+.sidebar .section {
+    margin-bottom: 25px;
+}
+
+.sidebar h2 {
+    color: #bb86fc; /* Lighter accent for section titles */
+    border-bottom: 2px solid #3700b3;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.sidebar h3 {
+    color: #bb86fc;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.sidebar a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    width: 70%;
+    padding: 30px;
+    color: #f0f0f0;
+}
+
+.main-content header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-content h1 {
+    color: #bb86fc;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+}
+
+.main-content h2 {
+    color: #f0f0f0;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.main-content .section {
+    margin-bottom: 30px;
+}
+
+.main-content .section h2 {
+    color: #bb86fc;
+    border-bottom: 2px solid #3700b3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: left;
+}
+
+.job-entry, .project-entry {
+    margin-bottom: 20px;
+}
+
+.job-entry h3, .project-entry h3 {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.job-meta {
+    color: #aaaaaa;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.job-entry ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.job-entry ul li {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
