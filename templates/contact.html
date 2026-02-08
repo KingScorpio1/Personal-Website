@@ -1,6 +1,95 @@
 {% extends "base.html" %}
-{% block title %}Contact - My Site{% endblock %}
+{% block title %}Contact - Sule Smith{% endblock %}
+
 {% block content %}
-<h1>Contact</h1>
-<p>This is the contact page.</p>
+<div class="contact-container">
+    <h1>Connect With Me</h1>
+    <p>Choose how you'd like to connect. Business inquiries are open to all.</p>
+    <br>
+
+    <!-- PUBLIC: BUSINESS SECTION -->
+    <div class="social-section">
+        <h2 class="section-title">🏢 Irie Roots & Business</h2>
+        <div class="social-grid">
+            <!-- Instagram -->
+            <div class="social-card">
+                <h3>Instagram</h3>
+                <img src="{{ url_for('static', filename='img/irieroots_instagram.jpeg') }}" alt="QR Code" class="qr-code">
+                <a href="https://www.instagram.com/_irieroots_?igsh=YXQzeTdueHo2dXh3" target="_blank" class="social-link">@_irieroots_</a>
+            </div>
+            <!-- Threads -->
+            <div class="social-card">
+                <h3>Threads</h3>
+                <img src="{{ url_for('static', filename='img/irieroots_threads.jpeg') }}" alt="QR Code" class="qr-code">
+                <a href="https://www.threads.com/@_irieroots_" target="_blank" class="social-link">@_irieroots_</a>
+            </div>
+            <!-- Facebook -->
+            <div class="social-card">
+                <h3>Facebook</h3>
+                <p>(No QR provided)</p>
+                <a href="https://www.facebook.com/share/18Mq3Lgoi1/" target="_blank" class="social-link">Irie Roots FB</a>
+            </div>
+             <!-- YouTube -->
+             <div class="social-card">
+                <h3>YouTube</h3>
+                <p>(No QR provided)</p>
+                <a href="https://www.youtube.com/channel/UCbmU_-IHzxIc9OwmFESGvQ" target="_blank" class="social-link">Irie Roots YT</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIVATE: PERSONAL SECTION -->
+    <div class="social-section">
+        <h2 class="section-title">👤 Personal & Tipsy Bartending</h2>
+        
+        {% if authorized %}
+            <!-- UNLOCKED CONTENT -->
+            <div class="social-grid">
+                <!-- Personal Instagram -->
+                <div class="social-card">
+                    <h3>Instagram</h3>
+                    <img src="{{ url_for('static', filename='img/sulesmith_instagram.jpeg') }}" alt="QR Code" class="qr-code">
+                    <a href="https://www.instagram.com/king.skully?igsh=cjVhZTJmMjVqbXVl" target="_blank" class="social-link">@king.skully</a>
+                </div>
+                <!-- Personal Threads -->
+                <div class="social-card">
+                    <h3>Threads</h3>
+                    <img src="{{ url_for('static', filename='img/sulesmith_threads.jpeg') }}" alt="QR Code" class="qr-code">
+                    <a href="https://www.threads.com/@king.skully" target="_blank" class="social-link">@king.skully</a>
+                </div>
+                <!-- Personal TikTok -->
+                <div class="social-card">
+                    <h3>TikTok</h3>
+                    <p>Tipsy828</p>
+                    <a href="https://www.tiktok.com/@tipsy828?_r=1&_t=ZS-93koKMzmcvI" target="_blank" class="social-link">@tipsy828</a>
+                </div>
+                <!-- Tipsy Facebook -->
+                <div class="social-card">
+                    <h3>Tipsy Bartending</h3>
+                    <p>Facebook Page</p>
+                    <a href="https://www.facebook.com/share/17rjJQvNx6/" target="_blank" class="social-link">Visit Page</a>
+                </div>
+                 <!-- Personal YouTube -->
+                 <div class="social-card">
+                    <h3>Personal YouTube</h3>
+                    <p>(No QR provided)</p>
+                    <a href="https://www.youtube.com/channelUCh6QwCnkZ2PXJkx_APfoKNA" target="_blank" class="social-link">My Channel</a>
+                </div>
+            </div>
+
+        {% else %}
+            <!-- LOCKED CONTENT -->
+            <div class="locked-content">
+                <div class="lock-icon">🔒</div>
+                <h3>Personal Links are Locked</h3>
+                <p>Please enter your email to view my personal social media contacts.</p>
+                <br>
+                <form method="POST" class="auth-form">
+                    <input type="email" name="auth_email" placeholder="Enter your email address" required>
+                    <button type="submit">Unlock Access</button>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

@@ -1,7 +1,17 @@
 [
   {
-    "title": "Why I Built My Own Site",
-    "date": "2025-06-10",
-    "content": "This is the content of your blog post. You can use HTML tags like <strong>bold</strong>."
+    "title": "Building a Hexapod: When Code Meets Mechanics",
+    "date": "2026-01-15",
+    "content": "<p>Building a six-legged robot isn't just about connecting wires; it's a lesson in <strong>Inverse Kinematics</strong>. When I started designing my Hexapod, the biggest challenge wasn't the 3D printing—it was the math required to make it walk smoothly.</p><p>I used an Arduino-based controller to calculate the precise angle for all 18 servos simultaneously. This project taught me that mechanical design and software logic are inseparable. If the chassis is too heavy, the code has to compensate for motor strain. If the code is inefficient, the robot jitters.</p><p>Check out the video in my portfolio to see it in action!</p>"
+  },
+  {
+    "title": "From Jamaica to Taiwan: An Engineering Odyssey",
+    "date": "2025-11-20",
+    "content": "<p>Moving from the laid-back vibes of St. Ann’s Bay to the high-tech bustle of Tainan was a culture shock, but it was exactly what I needed. Pursuing my Master's at Southern Taiwan University of Science and Technology pushed me out of my comfort zone.</p><p>Learning Mandarin while studying advanced Mechatronics was a double challenge. There were days when I was debugging code comments written in Chinese characters! But this experience gave me a global perspective on engineering that I wouldn't trade for anything.</p>"
+  },
+  {
+    "title": "Why Engineers Should Be Entrepreneurs",
+    "date": "2025-08-05",
+    "content": "<p>Many people ask me how I balance mechanical engineering with running <em>Irie Roots</em> and bartending. To me, they are all the same skill set: <strong>Problem Solving.</strong></p><ul><li>Engineering is solving technical problems.</li><li>Business is solving customer problems.</li></ul><p>Running a brand teaches you about supply chains, customer feedback, and branding—skills that are often missing in pure engineering curriculums. I believe the best engineers are those who understand the business impact of what they build.</p>"
   }
 ]

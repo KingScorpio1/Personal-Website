@@ -1,6 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Blog - My Site{% endblock %}
+{% block title %}Blog - Sule Smith{% endblock %}
+
 {% block content %}
-<h1>Blog</h1>
-<p>This is the blog page.</p>
+<div style="text-align: center; padding: 2rem;">
+    <h1>Blog</h1>
+    <p>Thoughts on engineering, life in Taiwan, and innovation.</p>
+</div>
+
+<div class="blog-list">
+    {% for post in posts %}
+    <div class="blog-post">
+        <h2>{{ post.title }}</h2>
+        <p class="blog-date">{{ post.date }}</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 10px 0;">
+        <p>{{ post.content | safe }}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

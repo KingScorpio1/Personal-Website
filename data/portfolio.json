@@ -1,12 +1,93 @@
 [
   {
-    "title": "Project One",
-    "description": "What this project does",
-    "url": "https://github.com/yourname/project1"
+    "category": "Robotics",
+    "title": "Hexapod Robot",
+    "description": "A 6-legged walking robot designed for stability and terrain traversal. Features inverse kinematics for smooth movement.",
+    "image": "hexapod.png",
+    "video_url": "https://youtube.com/your-hexapod-link",
+    "link_text": "Watch Demo"
   },
   {
-    "title": "Project Two",
-    "description": "Another cool project",
-    "url": "https://yourname.com/project2"
+    "category": "Robotics",
+    "title": "Mars Rover Prototype",
+    "description": "A prototype rover featuring rocker-bogie suspension system for obstacle climbing, similar to NASA designs.",
+    "image": "rover.jpg",
+    "video_url": "https://youtu.be/sDz3ktQBFWw",
+    "link_text": "Watch Demo"
+  },
+  {
+    "category": "Robotics",
+    "title": "Omnidirectional Frisbee Launcher",
+    "description": "A mobile robot featuring mecanum wheels for agile movement. Designed with a custom spiral gravity-fed magazine and a dual-flywheel launching mechanism for rapid-fire capability. Modeled in SolidWorks.",
+    "image": "frisbee_launcher.png",
+    "url": "#",
+    "link_text": "View Design"
+  },
+  {
+    "category": "Electronics",
+    "title": "Dual-Axis Solar Tracker",
+    "description": "Implemented two versions: LDR-based (Light Dependent Resistor) and Wi-Fi enabled for remote monitoring and efficiency tracking.",
+    "image": "tracker.png",
+    "url": "https://github.com/yourname/solar-tracker",
+    "link_text": "View Code"
+  },
+  {
+    "category": "Software",
+    "title": "Teacher Attendance Platform",
+    "description": "A web platform to streamline attendance tracking for educational institutes, reducing paperwork and errors.",
+    "image": "attendance.jpg",
+    "url": "#",
+    "link_text": "View Screenshots"
+  },
+  {
+    "category": "Software",
+    "title": "English Learning Platform",
+    "description": "Interactive learning management system designed to help students improve English skills through gamified lessons.",
+    "image": "english_platform.png",
+    "url": "#",
+    "link_text": "View Project"
+  },
+  {
+    "category": "Mobile App",
+    "title": "Android Utility Apps",
+    "description": "Various Android applications developed using Java/Kotlin, focusing on user utility and material design.",
+    "image": "android.jpg",
+    "url": "#",
+    "link_text": "View on PlayStore"
+  },
+  {
+    "category": "Design",
+    "title": "3D CAD Projects",
+    "description": "Complex mechanical assemblies and parts designed in SolidWorks and Fusion 360 for 3D printing and CNC.",
+    "image": "cad.png",
+    "url": "#",
+    "link_text": "View Gallery"
+  },
+  {
+    "category": "Education",
+    "title": "STEM Summer Camp",
+    "description": "Organized and taught a summer curriculum covering LEGO building, Python programming, 3D printing fundamentals, and introductory robotics.",
+    "images": [
+        "robotic_camp/camp_1.jpg", "robotic_camp/camp_2.jpg", "robotic_camp/camp_3.jpg", "robotic_camp/camp_4.jpg", 
+        "robotic_camp/camp_5.jpg", "robotic_camp/camp_6.jpg", "robotic_camp/camp_7.jpg", "robotic_camp/camp_8.jpg", 
+        "robotic_camp/camp_9.jpg", "robotic_camp/camp_10.jpg", "robotic_camp/camp_11.jpg", "robotic_camp/camp_12.jpg",
+        "robotic_camp/camp_13.jpg", "robotic_camp/camp_14.jpg", "robotic_camp/camp_15.jpg", "robotic_camp/camp_16.jpg", 
+        "robotic_camp/camp_17.jpg", "robotic_camp/camp_18.jpg", "robotic_camp/camp_19.jpg", "robotic_camp/camp_20.jpg",
+        "robotic_camp/camp_21.jpg", "robotic_camp/camp_22.jpg", "robotic_camp/camp_23.jpg", "robotic_camp/camp_24.jpg", 
+        "robotic_camp/camp_25.jpg", "robotic_camp/camp_26.jpg", "robotic_camp/camp_27.jpg", "robotic_camp/camp_28.jpg",
+        "robotic_camp/camp_29.jpg", "robotic_camp/camp_30.jpg", "robotic_camp/camp_31.jpg", "robotic_camp/camp_32.jpg",
+        "robotic_camp/camp_33.jpg", "robotic_camp/camp_34.jpg", "robotic_camp/camp_35.jpg", "robotic_camp/camp_36.jpg", 
+        "robotic_camp/camp_37.jpg", "robotic_camp/camp_38.jpg", "robotic_camp/camp_39.jpg", "robotic_camp/camp_40.jpg",
+        "robotic_camp/camp_41.jpg", "robotic_camp/camp_42.jpg", "robotic_camp/camp_43.jpg", "robotic_camp/camp_44.jpg", 
+        "robotic_camp/camp_45.jpg", "robotic_camp/camp_46.jpg", "robotic_camp/camp_47.jpg", "robotic_camp/camp_48.jpg",
+        "robotic_camp/camp_49.jpg", "robotic_camp/camp_50.jpg", "robotic_camp/camp_51.jpg", "robotic_camp/camp_52.jpg",
+        "robotic_camp/camp_53.jpg", "robotic_camp/camp_54.jpg", "robotic_camp/camp_55.jpg", "robotic_camp/camp_56.jpg", 
+        "robotic_camp/camp_57.jpg", "robotic_camp/camp_58.jpg", "robotic_camp/camp_59.jpg", "robotic_camp/camp_60.jpg",
+        "robotic_camp/camp_61.jpg", "robotic_camp/camp_62.jpg", "robotic_camp/camp_63.jpg", "robotic_camp/camp_64.jpg", 
+        "robotic_camp/camp_65.jpg", "robotic_camp/camp_66.jpg", "robotic_camp/camp_67.jpg", "robotic_camp/camp_68.jpg",
+        "robotic_camp/camp_69.jpg", "robotic_camp/teaching.jpg"
+    ],
+    "url": "#",
+    "link_text": "Event Photos"
   }
 ]

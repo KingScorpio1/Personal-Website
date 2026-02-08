@@ -1,6 +1,174 @@
 {% extends "base.html" %}
-{% block title %}About - My Site{% endblock %}
+{% block title %}About - Sule Smith{% endblock %}
+
 {% block content %}
-<h1>About</h1>
-<p>This is the about page.</p>
+<style>
+    /* 1. HIDE THE ANNOYING GOOGLE TRANSLATE TOP BANNER */
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    } 
+    body {
+        top: 0px !important; 
+    }
+
+    /* 2. GENERAL PAGE STYLES */
+    .about-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .about-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    /* 3. NEW MODERN TOGGLE SWITCH STYLES */
+    .lang-toggle-wrapper {
+        display: flex;
+        background-color: #2c2c2c; /* Dark background for the track */
+        border-radius: 30px;
+        padding: 4px;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .lang-btn {
+        background-color: transparent;
+        color: #888;
+        border: none;
+        padding: 8px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .lang-btn:hover {
+        color: #ddd;
+    }
+
+    /* The "Active" state of the toggle */
+    .lang-btn.active {
+        background-color: #6200ee;
+        color: #ffffff;
+        box-shadow: 0 2px 10px rgba(98, 0, 238, 0.4);
+    }
+
+    /* 4. CLEANER GOOGLE TRANSLATE WIDGET */
+    #google_translate_element select {
+        background-color: #2c2c2c;
+        color: #f0f0f0;
+        border: 1px solid #444;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 0.9rem;
+        cursor: pointer;
+        outline: none;
+    }
+    /* Hide the Google Logo in the dropdown */
+    .goog-logo-link { display: none !important; }
+    .goog-te-gadget { color: transparent !important; }
+
+    /* 5. CONTENT STYLES */
+    .bio-content {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        background-color: #1e1e1e;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        border: 1px solid #333;
+    }
+
+    .bio-content p {
+        margin-bottom: 20px;
+    }
+
+    /* Hide the Chinese version by default */
+    #bio-zh {
+        display: none;
+    }
+</style>
+
+<div class="about-header">
+    <h1>About Me</h1>
+</div>
+
+<div class="about-controls">
+    <!-- Modern Toggle Switch -->
+    <div class="lang-toggle-wrapper">
+        <button class="lang-btn active" onclick="showEnglish()" id="btn-en">English</button>
+        <button class="lang-btn" onclick="showChinese()" id="btn-zh">中文</button>
+    </div>
+    
+    <!-- Google Translate Widget for other languages -->
+    <div id="google_translate_element"></div>
+</div>
+
+<div class="bio-content">
+    
+    <!-- English Version -->
+    <div id="bio-en">
+        <p>My name is Sule Yerodine Smith, and I am on a quest to engineer a better tomorrow. From an early age, I found myself captivated by the intricate mechanisms of the world around me. Whether it was taking apart household appliances or constructing makeshift bridges from popsicle sticks, my innate curiosity and passion for problem-solving laid the foundation for my journey into the world of engineering.</p>
+        <p>Born and raised in St. Ann’s Bay, Jamaica, I was fortunate to grow up in an environment that nurtured my fascination with science and technology. My dad was an engineer himself and instilled in me the importance of critical thinking and perseverance. He always encouraged me to explore my interests and supported my endeavors every step of the way.</p>
+        <p>Fuelled by a desire to delve deeper into the realm of engineering, I pursued my education with unwavering determination. After graduating from high school with top honors, I enrolled in Kun Shan University to pursue a degree in Mechanical Engineering. The rigorous curriculum challenged me to push beyond my limits and think innovatively to solve complex problems.</p>
+        <p>During my time at university, I immersed myself in various extracurricular activities, including robotics clubs and engineering competitions. These experiences not only sharpened my technical skills but also taught me the value of collaboration and teamwork in achieving ambitious goals.</p>
+        <p>Now that I am armed with a solid foundation in engineering principles, I’m embarking on my professional journey with a sense of purpose and excitement. My first job as a junior engineer at Tairong Industrial Factory provided me with invaluable hands-on experience in the field. I worked on diverse projects ranging from designing complex automation machines to optimizing manufacturing processes.</p>
+        <p>As I progress through my career, I am increasingly passionate about leveraging engineering principles to drive positive change in the world. I actively brainstorm projects aligned with my values that allow me to make a meaningful impact on society.</p>
+        <p>As I reflect on my journey thus far, I am filled with gratitude for the opportunities that have shaped me into the engineer I am today. However, my quest for knowledge and innovation knows no bounds, and I am excited to continue pushing the boundaries of what is possible in the field of engineering.</p>
+        <p>In the years to come, I aspire to lead groundbreaking projects that tackle some of the world's most pressing challenges, from renewable energy to space exploration. With a steadfast commitment to excellence and a relentless drive to make a difference, I am confident that I will leave a lasting legacy in the field of engineering.</p>
+        <p>My journey as an aspiring engineer has been nothing short of exhilarating. From humble beginnings to groundbreaking achievements, I have embraced every challenge as an opportunity to learn and grow. As I set my sights on the future, I am filled with optimism and determination to engineer a world that is safer, more sustainable, and filled with endless possibilities.</p>
+    </div>
+
+    <!-- Chinese Version -->
+    <div id="bio-zh">
+        <p>我叫蘇翼 (Sule Yerodin Smith)，我對於生活的態度就是創造一個更美好的明天。從很小的時候起，我就發現自己被周遭接觸到的機械裝置所吸引。無論是拆開家用電器還是用冰棒棍玩搭建橋樑的遊戲，我與生俱來的好奇心和積極解決問題的能力成為我進入工程領域奠定的基礎。</p>
+        <p>我在牙買加聖安灣出生長大，很幸運能夠在一個培養我對科學和技術的環境中長大。我的父親本身就是一名工程師，他向我灌輸了批判性思考和毅力的重要性。他總是鼓勵我探索自己的興趣，並支持我每一步的努力。</p>
+        <p>在嚮往更深入研究工程領域這份信心的推動下，我以堅定不移的決心，決定接受更高層的教育。在高中以優異的成績畢業後，我進入崑山科技大學攻讀機械工程以及電機工程雙學位。在嚴格及緊湊的課綱中，我時刻的要求自己超越極限，以創新的方式思考來解決複雜的問題。</p>
+        <p>在大學期間，我積極參與各種課外活動，包括機器人社團和工程競賽。這些經驗不僅提高了我的技術技能，也教會了我如果要達成傲人的成績，在團隊合作方面的重要性。</p>
+        <p>現在，我已經在工程學理方面打下了堅實的基礎，既興奮又抱有使命感的我就這樣開始了我的求職之路。我的第一份工作是在台榮工業廠擔任初級工程師，這份工作讓我增加了寶貴的實務經驗。目前我在崗位上從事各種項目，從設計複雜的自動化機器到最佳化製造流程。</p>
+        <p>隨著我職業生涯的進步，我越來越熱衷於使用工程原理來推動環境，使其進步。我集思廣益，探討著符合我價值觀的工作內容，我希望這些內容在往後能夠對社會產生有意義的影響。</p>
+        <p>當我回顧這趟職業生涯，對於那些將我塑造成工程師的良機，充滿感激之情。然而，我對知識和創新的追求是無止境的，我很高興，希望未來能夠繼續突破工程領域的無限可能。</p>
+        <p>在未來的幾年裡，我渴望有朝一日能夠領導一起突破性的項目，解決從「再生能源」到「太空探索」等重大的挑戰。憑藉我不懈的努力，我相信我將在工程領域留下卓越的足跡。</p>
+        <p>作為一名持有抱負的工程師，我對於我後續的發展報有期待。從出身平凡到人生永有突破性的成就，我將每一次挑戰視為學習和成長的機會。當我放眼未來時，我充滿了樂觀和決心，要建立一個更和平、更永續、充滿無限可能性的世界。</p>
+    </div>
+
+</div>
+
+<!-- JavaScript for Language Toggle -->
+<script>
+    function showEnglish() {
+        document.getElementById('bio-en').style.display = 'block';
+        document.getElementById('bio-zh').style.display = 'none';
+        document.getElementById('btn-en').classList.add('active');
+        document.getElementById('btn-zh').classList.remove('active');
+    }
+
+    function showChinese() {
+        document.getElementById('bio-en').style.display = 'none';
+        document.getElementById('bio-zh').style.display = 'block';
+        document.getElementById('btn-en').classList.remove('active');
+        document.getElementById('btn-zh').classList.add('active');
+    }
+</script>
+
+<!-- Script for Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+      pageLanguage: 'en', 
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false /* Prevents automatic popup banner */
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 {% endblock %}

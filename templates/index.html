@@ -1,6 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Index - My Site{% endblock %}
+{% block title %}Sule Smith - Engineer & Innovator{% endblock %}
+
 {% block content %}
-<h1>Index</h1>
-<p>This is the index page.</p>
+<div class="hero">
+    <div class="hero-content">
+        <h1>Sule Smith</h1>
+        <h2>Mechanical Engineer | Innovator | Entrepreneur</h2>
+        <p>I engineer solutions for a better tomorrow. From advanced robotics and automation to building brands, I bridge the gap between technical complexity and creative innovation.</p>
+        <br>
+        <a href="/portfolio" class="btn">View My Work</a>
+        <a href="/contact" class="btn btn-outline">Contact Me</a>
+        <a href="/resume" class="btn btn-outline">My Resume</a>
+    </div>
+    <div class="hero-img">
+        <!-- THE AI PHOTO GOES HERE -->
+        <img src="{{ url_for('static', filename='img/ai_sule.jpeg') }}" alt="Sule Smith AI Avatar">
+    </div>
+</div>
 {% endblock %}
