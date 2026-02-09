@@ -107,10 +107,11 @@
 
             <div class="social-card">
                 <h3>YouTube</h3>
-                <div style="height: 120px; display: flex; align-items: center; justify-content: center;">
-                    <p style="font-style: italic; color: #888;">(No QR provided)</p>
+                <img src="{{ url_for('static', filename='img/irieroots_youtube.png') }}" alt="QR Code" class="qr-code">
+                <div class="copy-container">
+                    <a href="https://www.youtube.com/channel/UCbmU_-IHzxIc9OwmFESGvQ" target="_blank" class="social-link">Irie Roots YT</a>
+                    <button onclick="copyToClipboard('https://www.youtube.com/channel/UCbmU_-IHzxIc9OwmFESGvQ', this)" class="copy-btn" title="Copy handle">📋</button>
                 </div>
-                <a href="https://www.youtube.com/channel/UCbmU_-IHzxIc9OwmFESGvQ" target="_blank" class="social-link">Irie Roots YT</a>
             </div>
         </div>
     </div>
