@@ -2,25 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- This makes it phone friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Descriptions -->
+  <meta name="description" content="Portfolio of Sule Smith - Mechanical Engineer, Innovator, and Entrepreneur based in Taiwan. Specializing in Robotics, Automation, and Web Development.">
+  <meta name="keywords" content="Sule Smith, Mechanical Engineer, Robotics, Taiwan, Portfolio, Python, Flask">
+  <meta name="author" content="Sule Smith">
   
-  <title>{% block title %}My Site{% endblock %}</title>
+  <title>{% block title %}Sule Smith{% endblock %}</title>
   
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+  
+  <!-- Font Awesome for Icons (Hamburger, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='img/ai_sule.jpeg') }}">
 </head>
 <body class="dark-theme">
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/resume">Resume</a>
-    <a href="/portfolio">Portfolio</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
+
+  <!-- THE BACKGROUND CANVAS -->
+  <canvas id="tech-bg"></canvas>
+
+  <!-- NEW NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- 1. Logo -->
+      <a href="/" class="logo">Sule<span class="dot">.</span>Smith</a>
+
+      <!-- 2. The Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact" class="btn-nav">Contact</a></li>
+      </ul>
+
+      <!-- 3. Hamburger Icon (Mobile Only) -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
   </nav>
-  <main>
+
+  <!-- Main Content with a fade-in animation -->
+  <main class="fade-in">
     {% block content %}{% endblock %}
   </main>
+
+  <footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Sule Smith. Engineered in Taiwan.</p>
+        <div class="footer-socials">
+            <a href="https://instagram.com/king.skully" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:smithsule63@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
 </html>

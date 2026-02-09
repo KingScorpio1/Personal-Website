@@ -1,18 +1,127 @@
-body.dark-theme {
-  background-color: #121212;
-  color: #f0f0f0;
-  font-family: sans-serif;
-}
-nav a {
-  color: #f0f0f0;
-  margin-right: 15px;
-  text-decoration: none;
-}
-nav a:hover {
-  text-decoration: underline;
+/* --- GLOBAL RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- Hero Section (Index) --- */
+/* --- BACKGROUND CANVAS --- */
+#tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts it behind everything */
+    background-color: #121212; /* Keeps the dark background */
+    opacity: 0.4; /* Makes the animation subtle/faint */
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding-top: 80px; /* Push content down so it's not hidden behind the fixed nav */
+}
+
+/* --- 1. MODERN NAVBAR STYLES --- */
+.navbar {
+    position: fixed; /* Sticks to top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px); /* Glass effect */
+    border-bottom: 1px solid #333;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo .dot {
+    color: #bb86fc;
+    font-size: 2rem;
+    line-height: 0;
+}
+
+/* Nav Links Styling */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #bb86fc;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links li a:hover {
+    color: #bb86fc;
+}
+
+/* Contact Button in Nav */
+.nav-links .btn-nav {
+    background: #3700b3;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white !important;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+.nav-links .btn-nav:hover {
+    transform: scale(1.05);
+    background: #6200ee;
+}
+.nav-links .btn-nav::after { display: none; }
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* --- 2. HERO SECTION (Index) --- */
 .hero {
     display: flex;
     align-items: center;
@@ -25,14 +134,24 @@ nav a:hover {
 .hero-content { max-width: 600px; }
 .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; color: #bb86fc; }
 .hero h2 { font-size: 1.5rem; color: #03dac6; margin-bottom: 1.5rem; }
+
+/* HEXAGON IMAGE STYLE */
 .hero-img img {
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
+    padding: 15px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #bb86fc;
-    box-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+    /* Create the Hexagon */
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    /* Use Drop Shadow for border effect on shapes */
+    filter: drop-shadow(0 0 10px rgba(187, 134, 252, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+.hero-img img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(3, 218, 198, 0.8));
+}
+
 .btn {
     display: inline-block;
     padding: 10px 25px;
@@ -47,7 +166,7 @@ nav a:hover {
 .btn-outline { background: transparent; border: 2px solid #03dac6; color: #03dac6; }
 .btn-outline:hover { background: #03dac6; color: #121212; }
 
-/* --- Portfolio Grid --- */
+/* --- 3. PORTFOLIO GRID --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -65,24 +184,37 @@ nav a:hover {
 .project-card h3 { color: #bb86fc; }
 .project-card a { color: #03dac6; text-decoration: none; }
 
-/* --- Blog List --- */
+/* --- 4. BLOG LIST (Restored Box Style) --- */
 .blog-list { max-width: 800px; margin: 0 auto; padding: 2rem; }
+
 .blog-post {
-    background: #1e1e1e;
+    background-color: #1e1e1e; /* Dark grey box background */
     padding: 2rem;
     margin-bottom: 2rem;
-    border-radius: 8px;
-    border-left: 5px solid #03dac6;
+    border-radius: 12px; /* Rounded corners */
+    border-left: 5px solid #03dac6; /* Teal accent line on left */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Slight shadow for depth */
 }
-.blog-date { color: #888; font-size: 0.9rem; }
 
-/* --- Contact Page Styles --- */
+.blog-post h2 {
+    color: #bb86fc;
+    margin-bottom: 0.5rem;
+}
+
+.blog-date { 
+    color: #888; 
+    font-size: 0.9rem; 
+    font-style: italic;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* --- 5. CONTACT PAGE --- */
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-.social-section { margin-bottom: 50px; }
 .section-title {
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
@@ -91,7 +223,7 @@ nav a:hover {
 }
 .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 .social-card {
@@ -100,13 +232,50 @@ nav a:hover {
     border-radius: 10px;
     text-align: center;
     border: 1px solid #333;
+    transition: transform 0.3s;
 }
+.social-card:hover { transform: translateY(-5px); border-color: #bb86fc; }
+.social-card h3 { color: #f0f0f0; margin-bottom: 10px; }
+
+/* QR Code Zoom Logic */
 .qr-code {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin: 15px 0;
-    border-radius: 5px;
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
+    border-radius: 8px;
+    display: block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: zoom-in;
+    background-color: white;
+}
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #0d0d0d;
+    border-top: 1px solid #333;
+    margin-top: 50px;
+    color: #888;
+}
+.footer-socials {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.footer-socials a {
+    color: #888;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer-socials a:hover {
+    color: #03dac6;
+}
+@media screen and (min-width: 769px) {
+    .qr-code:hover {
+        transform: scale(2.8);
+        z-index: 1000;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+        border: 4px solid #fff;
+    }
 }
 .social-link {
     display: block;
@@ -117,80 +286,64 @@ nav a:hover {
 }
 
 /* Locked Section */
-.locked-content {
+.locked-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     background: #1a1a1a;
     border: 1px dashed #555;
-    padding: 40px;
-    text-align: center;
+    padding: 30px;
     border-radius: 10px;
+    margin-top: 20px;
 }
-.lock-icon { font-size: 3rem; margin-bottom: 1rem; }
-.auth-form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    width: 250px;
-    margin-right: 10px;
-}
-.auth-form button {
-    padding: 10px 20px;
-    background: #03dac6;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+.auth-box { flex: 1; min-width: 280px; }
+.auth-form input { width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: white; }
+.auth-form button { width: 100%; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; background: #03dac6; }
+
+/* --- 6. PAGE FADE ANIMATION --- */
+.fade-in { animation: fadeUp 0.8s ease-out; }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- 7. MOBILE RESPONSIVENESS --- */
 @media screen and (max-width: 768px) {
+    /* Navbar adjustments */
+    .hamburger { display: block; }
     
-    /* 1. Navigation */
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 10px;
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #121212; /* Solid dark background */
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        border-bottom: 2px solid #3700b3;
     }
-    nav a {
-        margin: 5px 10px; /* More space for fingers to tap */
-        font-size: 1.1rem;
-    }
+    .nav-links.active { max-height: 500px; padding-bottom: 20px; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links li a { display: block; padding: 15px; width: 100%; border-bottom: 1px solid #222; }
+    .nav-links .btn-nav { background: transparent; color: #bb86fc !important; border-radius: 0; }
 
-    /* 2. Hero Section (Home) */
+    /* Hero adjustments */
     .hero {
-        flex-direction: column-reverse; /* Put image on top, text below */
+        flex-direction: column-reverse;
         text-align: center;
         gap: 2rem;
-        padding: 1rem;
     }
-    .hero-content {
-        width: 100%;
-    }
-    .hero h1 {
-        font-size: 2.5rem; /* Make big text smaller */
-    }
-    .hero-img img {
-        width: 250px; /* Shrink image slightly */
-        height: 250px;
-    }
+    .hero h1 { font-size: 2rem; }
+    .hero-img img { width: 220px; height: 220px; } /* Smaller hex on phone */
 
-    /* 3. General Containers */
-    .contact-container, .blog-list, .portfolio-grid {
-        padding: 15px; /* Less padding on edges */
-    }
+    /* Grid adjustments */
+    .portfolio-grid, .social-grid { grid-template-columns: 1fr; }
     
-    /* 4. Portfolio Grid */
-    /* Ensure cards don't get squished */
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* 1 column only */
-    }
-    
-    /* 5. About Page Toggle */
-    .about-controls {
-        flex-direction: column; /* Stack buttons and Google Translate */
-        gap: 15px;
-    }
-    .bio-content {
-        padding: 20px; /* More room for text */
-    }
+    /* Contact Page */
+    .locked-container { flex-direction: column; }
+    .divider { display: none; }
 }
