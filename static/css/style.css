@@ -140,3 +140,57 @@ nav a:hover {
     cursor: pointer;
     font-weight: bold;
 }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Navigation */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+    nav a {
+        margin: 5px 10px; /* More space for fingers to tap */
+        font-size: 1.1rem;
+    }
+
+    /* 2. Hero Section (Home) */
+    .hero {
+        flex-direction: column-reverse; /* Put image on top, text below */
+        text-align: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    .hero-content {
+        width: 100%;
+    }
+    .hero h1 {
+        font-size: 2.5rem; /* Make big text smaller */
+    }
+    .hero-img img {
+        width: 250px; /* Shrink image slightly */
+        height: 250px;
+    }
+
+    /* 3. General Containers */
+    .contact-container, .blog-list, .portfolio-grid {
+        padding: 15px; /* Less padding on edges */
+    }
+    
+    /* 4. Portfolio Grid */
+    /* Ensure cards don't get squished */
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* 1 column only */
+    }
+    
+    /* 5. About Page Toggle */
+    .about-controls {
+        flex-direction: column; /* Stack buttons and Google Translate */
+        gap: 15px;
+    }
+    .bio-content {
+        padding: 20px; /* More room for text */
+    }
+}

@@ -55,6 +55,54 @@
         position: relative;
     }
 
+    /* --- NEW AUTH STYLES --- */
+    .locked-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        background: #1a1a1a;
+        border: 1px dashed #555;
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .auth-box {
+        flex: 1;
+        min-width: 280px;
+        padding: 10px;
+    }
+    .auth-box h3 { color: #03dac6; margin-bottom: 10px; }
+    .auth-box p { color: #aaa; font-size: 0.9rem; margin-bottom: 15px; }
+    
+    .divider {
+        width: 1px;
+        background: #444;
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) { .divider { display: block; } }
+
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #444;
+        background: #222;
+        color: white;
+    }
+    .btn-auth {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .btn-request { background-color: #3700b3; color: white; }
+    .btn-unlock { background-color: #03dac6; color: black; }
+    .error-msg { color: #cf6679; margin-bottom: 10px; font-weight: bold; }
+
     /* DESKTOP ONLY: Zoom effect on hover */
     @media screen and (min-width: 769px) {
         .qr-code:hover {
@@ -219,7 +267,7 @@
                     <img src="{{ url_for('static', filename='img/sulesmith_instagram.jpeg') }}" alt="QR Code" class="qr-code">
                     <div class="copy-container">
                         <a href="https://www.instagram.com/king.skully?igsh=cjVhZTJmMjVqbXVl" target="_blank" class="social-link">@king.skully</a>
-                        <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">📋</button>
+                        <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">🔗</button>
                     </div>
                 </div>
 
@@ -232,7 +280,7 @@
                     <img src="{{ url_for('static', filename='img/sulesmith_threads.jpeg') }}" alt="QR Code" class="qr-code">
                     <div class="copy-container">
                         <a href="https://www.threads.com/@king.skully" target="_blank" class="social-link">@king.skully</a>
-                        <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">📋</button>
+                        <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">🔗</button>
                     </div>
                 </div>
 
@@ -245,7 +293,7 @@
                     <img src="{{ url_for('static', filename='img/irieroots_tiktok.jpeg') }}" alt="TikTok QR" class="qr-code">
                     <div class="copy-container">
                         <a href="https://www.tiktok.com/@tipsy828?_r=1&_t=ZS-93koKMzmcvI" target="_blank" class="social-link">@tipsy828</a>
-                        <button onclick="copyToClipboard('tipsy828', this)" class="copy-btn" title="Copy Handle">📋</button>
+                        <button onclick="copyToClipboard('tipsy828', this)" class="copy-btn" title="Copy Handle">🔗</button>
                     </div>
                 </div>
 
@@ -264,15 +312,38 @@
 
         {% else %}
             <!-- LOCKED CONTENT -->
-            <div class="locked-content">
-                <div class="lock-icon">🔒</div>
-                <h3>Personal Links are Locked</h3>
-                <p>Please enter your email to view my personal social media contacts.</p>
-                <br>
-                <form method="POST" class="auth-form">
-                    <input type="email" name="auth_email" placeholder="Enter your email address" required>
-                    <button type="submit">Unlock Access</button>
-                </form>
+            <div class="locked-container">
+                
+                <!-- 1. Request Access (Sends Email) -->
+                <div class="auth-box">
+                    <h3>🔒 Request Access</h3>
+                    <p>Enter your email below to request an access code. I will review it and email you back.</p>
+                    
+                    <!-- REPLACE THE URL BELOW WITH YOUR FORMSPREE URL -->
+                    <form action="https://formspree.io/f/xwvnprkv" method="POST">
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+                        <textarea name="message" placeholder="Quick note (optional)" style="width:100%; background:#222; border:1px solid #444; color:white; border-radius:5px; margin-bottom:10px;"></textarea>
+                        <button type="submit" class="btn-auth btn-request">Send Request</button>
+                    </form>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- 2. Enter Code (Unlocks Site) -->
+                <div class="auth-box">
+                    <h3>🔑 Enter Code</h3>
+                    <p>Already have a code? Enter it below to unlock.</p>
+                    
+                    {% if error %}
+                        <div class="error-msg">{{ error }}</div>
+                    {% endif %}
+
+                    <form method="POST">
+                        <input type="text" name="access_code" placeholder="Enter Access Code" required>
+                        <button type="submit" class="btn-auth btn-unlock">Unlock</button>
+                    </form>
+                </div>
+
             </div>
         {% endif %}
     </div>

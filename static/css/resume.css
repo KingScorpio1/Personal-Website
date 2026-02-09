@@ -130,3 +130,53 @@
     margin-bottom: 5px;
     line-height: 1.6;
 }
+
+/* --- MOBILE RESUME STYLES --- */
+@media screen and (max-width: 768px) {
+    
+    /* Stack the sidebar and main content */
+    .resume-container {
+        flex-direction: column;
+        margin: 10px; /* Less margin on edges */
+    }
+
+    /* Make Sidebar full width */
+    .sidebar {
+        width: 100%; 
+        padding: 20px;
+        box-sizing: border-box; /* Ensures padding doesn't break width */
+        text-align: center; /* Center profile pic and contact info */
+    }
+
+    .profile-picture img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Make Main Content full width */
+    .main-content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .main-content h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .main-content header {
+        text-align: center;
+    }
+
+    /* Align section headers to center for better look */
+    .sidebar h2, .main-content .section h2 {
+        text-align: center;
+    }
+    
+    /* Fix lists alignment */
+    .sidebar ul {
+        display: inline-block;
+        text-align: left;
+    }
+}

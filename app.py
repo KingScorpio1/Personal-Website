@@ -6,6 +6,9 @@ app = Flask(__name__)
 # A secret key is required to use sessions. In production, keep this secret!
 app.secret_key = 'sule-smith-secret-key-change-this-in-prod'
 
+# SET YOUR SECRET ACCESS CODE HERE
+ACCESS_CODE = "IRIE2026" 
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -51,25 +54,22 @@ def blog():
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    # Check if the user is already authorized via session
+    # Check session
     is_authorized = session.get('authorized', False)
+    error_message = None
 
     if request.method == "POST":
-        # If the form being submitted is the "Unlock" form
-        if "auth_email" in request.form:
-            email = request.form.get("auth_email")
-            # Here you could save this email to a file or database to track who viewed it
-            print(f"User authorized with email: {email}") 
-            
-            # Set session to true
+        # Check if they are submitting the Access Code
+        user_code = request.form.get("access_code")
+        
+        if user_code == ACCESS_CODE:
             session['authorized'] = True
             return redirect(url_for('contact'))
-        
-        # If it's a general contact form submission
-        print("General Form submitted:", request.form)
-        return redirect(url_for('contact'))
+        else:
+            error_message = "Incorrect Access Code."
 
-    return render_template("contact.html", authorized=is_authorized)
+    return render_template("contact.html", authorized=is_authorized, error=error_message)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
