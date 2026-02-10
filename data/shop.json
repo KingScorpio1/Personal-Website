@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Irie Roots T-Shirt",
+    "price": "NT$ 800",
+    "description": "Premium cotton tee with the classic Irie Roots logo. Available in Black/White.",
+    "image": "shirt_black.jpg",
+    "stripe_link": "https://buy.stripe.com/test_..." 
+  },
+  {
+    "id": 2,
+    "title": "Robotics Starter Kit",
+    "price": "NT$ 2,500",
+    "description": "All the parts you need to build the Arduino solar tracker featured in my portfolio.",
+    "image": "robot_kit.jpg",
+    "stripe_link": "https://buy.stripe.com/test_..."
+  },
+  {
+    "id": 3,
+    "title": "3D Printed Hexapod Chassis",
+    "price": "NT$ 1,200",
+    "description": "Custom designed PLA chassis for 18-servo hexapods.",
+    "image": "hexapod_parts.jpg",
+    "stripe_link": "https://buy.stripe.com/test_..."
+  }
+]

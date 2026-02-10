@@ -24,6 +24,23 @@ def resume():
         resume_data = json.load(f)
     return render_template("resume.html", resume=resume_data)
 
+@app.route("/shop")
+def shop():
+    with open("data/shop.json", encoding='utf-8') as f:
+        shop_data = json.load(f)
+    return render_template("shop.html", products=shop_data)
+
+@app.route("/shop-preview")
+def shop_preview():
+    # Make sure you have data/shop.json created, even if dummy data
+    try:
+        with open("data/shop.json", encoding='utf-8') as f:
+            shop_data = json.load(f)
+    except FileNotFoundError:
+        shop_data = [] # Handle case where file doesn't exist yet
+        
+    return render_template("shop_full.html", products=shop_data)
+
 @app.route("/resume/request", methods=["POST"])
 def request_resume():
     requester = request.form.get("requester_email")

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Shop - Sule Smith{% endblock %}
+
+{% block content %}
+<style>
+    .price-tag {
+        color: #03dac6;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .buy-btn {
+        background-color: #03dac6;
+        color: #000;
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s ease;
+    }
+    .buy-btn:hover {
+        transform: scale(1.05);
+        background-color: #018786;
+    }
+    .shop-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5px;
+        background: #333;
+    }
+</style>
+
+<div style="text-align: center; padding: 2rem;">
+    <h1>Shop</h1>
+    <p>Official Merchandise & Engineering Kits.</p>
+</div>
+
+<div class="portfolio-grid">
+    {% for item in products %}
+    <div class="project-card">
+        <!-- Make sure these images exist in your static/img folder! -->
+        <img src="{{ url_for('static', filename='img/' + item.image) }}" alt="{{ item.title }}" class="shop-img">
+        
+        <h3 style="margin-top: 15px;">{{ item.title }}</h3>
+        <p class="price-tag">{{ item.price }}</p>
+        <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 15px;">{{ item.description }}</p>
+        
+        <a href="{{ item.stripe_link }}" target="_blank" class="buy-btn">
+            Buy Now <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

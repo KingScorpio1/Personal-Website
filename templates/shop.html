@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Shop Coming Soon - Sule Smith{% endblock %}
+
+{% block content %}
+<style>
+    .coming-soon-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .shop-icon {
+        font-size: 4rem;
+        color: #03dac6;
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .coming-soon-container h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        background: -webkit-linear-gradient(45deg, #bb86fc, #03dac6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .notify-box {
+        background: #1e1e1e;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #333;
+        margin-top: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .notify-form {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .notify-form input {
+        flex: 1;
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #444;
+        background: #121212;
+        color: white;
+    }
+
+    .notify-form button {
+        padding: 12px 25px;
+        background: #bb86fc;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .notify-form button:hover {
+        background: #3700b3;
+    }
+    
+    /* Mobile Fix */
+    @media (max-width: 600px) {
+        .notify-form { flex-direction: column; }
+    }
+</style>
+
+<div class="coming-soon-container">
+    <div class="shop-icon">
+        <i class="fas fa-shopping-bag"></i>
+    </div>
+    
+    <h1>Store Launching Soon</h1>
+    <p style="font-size: 1.2rem; max-width: 600px; color: #aaa;">
+        I am currently engineering high-quality robotics kits and designing exclusive <em>Irie Roots</em> merchandise. 
+    </p>
+
+    <div class="notify-box">
+        <h3>Get Notified When We Launch</h3>
+        <p style="font-size: 0.9rem; margin-top: 5px; color: #888;">Be the first to know about the hexapod kits drop.</p>
+        
+        <!-- USE YOUR FORMSPREE LINK HERE -->
+        <form action="https://formspree.io/f/xwvnprkv" method="POST" class="notify-form">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
