@@ -41,6 +41,10 @@ def shop_preview():
         
     return render_template("shop_full.html", products=shop_data)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route("/resume/request", methods=["POST"])
 def request_resume():
     requester = request.form.get("requester_email")

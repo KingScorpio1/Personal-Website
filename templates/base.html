@@ -17,6 +17,19 @@
   <!-- Font Awesome for Icons (Hamburger, etc.) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='img/ai_sule2-.png') }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sule-smiths-personal-website.onrender.com/"> <!-- Put your URL here -->
+  <meta property="og:title" content="Sule Smith - Engineer & Innovator">
+  <meta property="og:description" content="Mechanical Engineer, Robotics Expert, and Entrepreneur based in Taiwan. View my portfolio and projects.">
+  <meta property="og:image" content="{{ url_for('static', filename='img/ai_sule.jpeg', _external=True) }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://sulesmith.com/">
+  <meta property="twitter:title" content="Sule Smith - Engineer & Innovator">
+  <meta property="twitter:description" content="Mechanical Engineer, Robotics Expert, and Entrepreneur based in Taiwan.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='img/ai_sule.jpeg', _external=True) }}">
 </head>
 <body class="dark-theme">
 
@@ -59,6 +72,7 @@
             <a href="https://instagram.com/king.skully" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:smithsule63@gmail.com"><i class="fas fa-envelope"></i></a>
+            <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
         </div>
     </div>
 </footer>

@@ -111,3 +111,24 @@ if (canvas) {
     init();
     animate();
 }
+
+// --- 4. SCROLL TO TOP BUTTON ---
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+if (scrollBtn) {
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        // Show button if scrolled down 200px
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    }
+
+    scrollBtn.addEventListener('click', () => {
+        // Smooth scroll to top
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+}

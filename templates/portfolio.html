@@ -152,7 +152,7 @@
 
         <!-- CASE 2: SINGLE IMAGE -->
         {% elif project.image %}
-            <img src="{{ url_for('static', filename='img/' + project.image) }}" alt="{{ project.title }}" class="project-img">
+            <img src="{{ url_for('static', filename='img/' + project.image) }}" alt="{{ project.title }}" class="project-img" loading="lazy">
         {% endif %}
 
         <!-- Project Details -->
