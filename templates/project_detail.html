@@ -187,7 +187,7 @@
         {% for sub_project in project.details.projects %}
         <div class="suite-project">
             <h2 class="suite-title">{{ sub_project.title }}</h2>
-            <p class="suite-desc">{{ sub_project.description }}</p>
+            <p class="suite-desc">{{ sub_project.description | safe }}</p>
             
             <div class="media-container">
                 
@@ -207,15 +207,24 @@
                         <a class="slide-next" onclick="plusSlides(1, 'suite-slide-{{ loop.index }}')">❯</a>
                     </div>
 
-                <!-- CASE C: File Videos (UPDATED FOR AUDIO & SIZE) -->
+                <!-- CASE C: File Videos (GIF vs standard Video) -->
                 {% elif sub_project.video_files %}
                     <div class="video-grid">
                         {% for vid in sub_project.video_files %}
                         <div class="video-card">
-                            <!-- Removed 'autoplay loop muted'. Added 'controls'. -->
-                            <video class="loop-video" controls playsinline>
-                                <source src="{{ url_for('static', filename='img/' + vid.src) }}" type="video/mp4">
-                            </video>
+                            
+                            {% if sub_project.is_gif %}
+                                <!-- GIF Style: Silent, looping, autoplay -->
+                                <video class="loop-video" autoplay loop muted playsinline>
+                                    <source src="{{ url_for('static', filename='img/' + vid.src) }}" type="video/mp4">
+                                </video>
+                            {% else %}
+                                <!-- Standard Video: Has controls and audio -->
+                                <video class="loop-video" controls playsinline>
+                                    <source src="{{ url_for('static', filename='img/' + vid.src) }}" type="video/mp4">
+                                </video>
+                            {% endif %}
+                            
                             <p class="caption">{{ vid.caption }}</p>
                         </div>
                         {% endfor %}
@@ -247,7 +256,7 @@
         <div class="app-row">
             <div class="app-text">
                 <h3>{{ content.header }}</h3>
-                <p>{{ content.body }}</p>
+                <p>{{ content.body | safe }}</p>
             </div>
             <div class="app-img-container">
                 {% if content.img is iterable and content.img is not string %}

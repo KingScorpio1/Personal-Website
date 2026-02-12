@@ -44,6 +44,7 @@
         {
           "title": "Embedded Systems & LEDs",
           "description": "Programming microcontrollers for visual displays and logic operations. Focusing on timing and hardware integration.",
+          "is_gif": true,
           "video_files": [
              {"src": "embedded/led_sequence.mp4", "caption": "Custom LED timing sequence."},
              {"src": "embedded/segment_display.mp4", "caption": "7-Segment display counter logic."}
@@ -104,27 +105,27 @@
       "content": [
         {
           "header": "App 1: Irie Herbs",
-          "body": "Ancient Wisdom, Reimagined for the Modern Soul. Sub-headline: Your pocket ethnobotanist. Discover natural remedies, find herbal alternatives to pharmaceuticals, and track your spirit's alignment—all in one place.",
+          "body": "<strong>Meet The Herbalist: Your AI-Powered Natural Health Companion.</strong><br><br>Step away from the synthetic and return to the roots of healing. The Herbalist bridges the gap between ancestral knowledge and modern convenience, acting as your personal guide to the world of natural medicine.<br><br><strong>What You Can Do:</strong><br>🌿 <strong>Consult the Wise Healer:</strong> Simply describe your ailment, and our AI—trained in the voice of a traditional herbal doctor—will prescribe specific herbal recipes, preparation steps, and dosage instructions.<br>💊 <strong>Find Natural Alternatives:</strong> Enter a drug name to discover well-known, ethnobotanical replacements.<br>📖 <strong>Build Your Grimoire:</strong> Save your favorite consultations to your personal Grimoire, available offline.<br>✨ <strong>Spirit Check-In:</strong> Wellness isn't just physical. Use the daily tracker to monitor your energy levels.",
           "img": ["android/herbal1.jpeg", "android/herbal2.jpeg", "android/herbal3.jpeg", "android/herbal4.jpeg"]
         },
         {
           "header": "App 2: Irie Cooks",
-          "body": "Cook Smarter, Plan Better, Shop Together. IrieCooks is the all-in-one kitchen assistant that brings your recipes, meal plans, and grocery lists into one beautiful, dark-mode experience. Import recipes from the web with a single tap, plan your week, and sync your shopping list with your family in real-time.",
+          "body": "<strong>Cook Smarter, Plan Better, Shop Together.</strong><br>The modern cookbook app designed to streamline your entire cooking journey, from inspiration to the dinner table.<br><br>✨ <strong>Smart Recipe Import:</strong> Stop scrolling through endless blog posts. IrieCooks instantly fetches the best recipes from the web.<br>📅 <strong>Weekly Meal Planner:</strong> Take the stress out of 'What's for dinner?' Assign recipes to any day with a simple tap.<br>🛒 <strong>Cloud-Synced Grocery Lists:</strong> Share your unique 'Family Code' with your partner and watch items get checked off in real-time as you shop.<br>📸 <strong>Capture Your Creations:</strong> Snap a photo and save your own custom family dishes directly to your personal cookbook.<br>📱 <strong>Built for Modern Android:</strong> Premium interface with smooth animations and a stunning dark theme.",
           "img": ["android/cooks1.jpeg", "android/cooks2.jpeg", "android/cooks3.jpeg", "android/cooks4.jpeg"]
         },
         {
           "header": "App 3: Reggae Reps",
-          "body": "Welcome to ReggaeReps, the fitness command center that turns your yearly goals into a tactical campaign. Forget generic workout apps; engage in Operation: Iron Year. Whether you are building mass, shredding fat, or mastering calisthenics, ReggaeReps provides the structure you need with the vibe you want. From the Active Mission Mode that guides you through every rep and rest period, to the Biometric Wireframe that visualizes your physical transformation, every feature is built to keep you ranked up and moving forward. Deploy tactical tunes directly from the dashboard and turn your grind into a groove.",
+          "body": "<strong>Your Pocket Drill Sergeant.</strong><br>ReggaeReps is a comprehensive tactical fitness ecosystem built for Android. We combine linear periodization logic with advanced tracking to ensure you never plateau.<br><br><strong>Key Features:</strong><br>• <strong>Daily Briefings & Missions:</strong> Calculated workout plans based on a progressive 30-day cycle.<br>• <strong>Tactical Library:</strong> A massive database ranging from Battle Ropes and Calisthenics to Yoga.<br>• <strong>Active Operation Mode:</strong> Built-in tactical stopwatch (with countdown beeps), set tracking, and haptic feedback.<br>• <strong>Biometric Scanning:</strong> Input body measurements and view your data mapped onto a gender-specific anatomical wireframe.<br>• <strong>Rank Progression:</strong> Earn your stripes. Start as a Recruit and grind your way to General based on mission consistency.",
           "img": ["android/reggae1.jpeg", "android/reggae2.jpeg", "android/reggae3.jpeg", "android/reggae4.jpeg", "android/reggae5.jpeg"]
         },
         {
           "header": "App 4: Irie FlipArt",
-          "body": "IrieFlipArt isn't just a drawing app; it’s a fluid animation studio. With our unique floating, collapsible toolbars, your canvas takes center stage. Sketch, smudge, blur, and animate without the clutter. Whether you’re sketching a quick idea or rendering a masterpiece, find your flow with IrieFlipArt.",
+          "body": "<strong>Animation Freedom in Your Pocket.</strong><br><em>Create stunning frame-by-frame animations with a workspace that adapts to you.</em><br><br>IrieFlipArt isn't just a drawing app; it’s a fluid animation studio. With our unique floating, collapsible toolbars, your canvas takes center stage. Sketch, smudge, blur, and animate without the clutter. Whether you’re sketching a quick idea or rendering a masterpiece, find your flow with IrieFlipArt.",
           "img": ["android/art1.jpeg", "android/art2.jpeg", "android/art3.jpeg", "android/art4.jpeg"]
         },
         {
           "header": "App 5: Neon Void",
-          "body": "Dive into a high-octane, retro-futuristic battlefield where precision meets chaos. Pilot your craft through a vibrant, ever-shifting digital void, tearing through waves of AI-driven enemies in a symphony of light and lasers. It’s not just a survival shooter—it’s a test of reflexes in a world of pure neon.",
+          "body": "<strong>Precision Meets Chaos.</strong><br>Dive into a high-octane, retro-futuristic battlefield where precision meets chaos. Pilot your craft through a vibrant, ever-shifting digital void, tearing through waves of AI-driven enemies in a symphony of light and lasers. It’s not just a survival shooter—it’s a test of reflexes in a world of pure neon.",
           "img": ["android/void1.jpeg", "android/void2.jpeg", "android/void3.jpeg"]
         }
       ]
