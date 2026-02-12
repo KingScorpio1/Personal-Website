@@ -132,13 +132,14 @@
   },
   {
     "id": "design-hub",
-    "category": "Design",
+    "category": "Design & Prototyping",
     "title": "3D CAD & Design Hub",
     "description": "Complex mechanical assemblies, and parts designed in SolidWorks and Fusion 360 for 3D printing and CNC.",
     "image": "cad.png",
     "details": {
       "type": "design_hub",
       "intro": "I specialize in SolidWorks and OnShape. Below are my featured designs and educational content.",
+      "coming_soon_text": "More mechanical assemblies and 3D printing time-lapses are currently being processed in the workshop. Check back soon for updates!",
       "hire_cta": true,
       "sections": [
         {
@@ -149,45 +150,86 @@
           ]
         },
         {
+          "title": "Additive Manufacturing (3D Printing)",
+          "media_items": [
+             {"src": "ocarina.jpeg", "desc": "Multi-Tool Print: Functional Ocarina produced on the Prusa XL."}
+          ]
+        },
+        {
           "title": "OnShape Education",
           "media_items": [
              {"src": "onshape1.png", "desc": "Intro to CAD Class Day 1 (View on Onshape)", "link": "https://cad.onshape.com/documents/0e9850c279b6da4bee417922/w/0786b67dda502f11bc9d5aa1/e/0efc14ba3e35ebf9aad83758?renderMode=0&uiState=698dfc357bdf5a729afc16ac"},
+             {"src": "onshape5.png", "desc": "CAD Class Day 3 (View on Onshape)", "link": "https://cad.onshape.com/documents/e7a5295ae326459fedc39825/w/1fa6c29a326e058742f8b00f/e/182a25308a0598cb5a8dc79f?renderMode=0&uiState=698dfc64f7439ef094742c5f"},
              {"src": "onshape2.png", "desc": "CAD Class Day 2 (View on Onshape)", "link": "https://cad.onshape.com/documents/2b330b6e3d6bbe91020901ec/w/190d8b0e8f5f2888723e1da1/e/18501b3ce0ae607cf4e7f5b8?renderMode=0&uiState=698dfc227bdf5a729afc1624"},
-             {"src": "onshape3.png", "desc": "CAD Class Day 3 (View on Onshape)", "link": "https://cad.onshape.com/documents/e7a5295ae326459fedc39825/w/1fa6c29a326e058742f8b00f/e/182a25308a0598cb5a8dc79f?renderMode=0&uiState=698dfc64f7439ef094742c5f"},
              {"src": "onshape3.png", "desc": "CAD Class Day 4 (View on Onshape)", "link": "https://cad.onshape.com/documents/7b909ad022bee3c8942f1f7a/w/b0f27e22155fcc53552b7ec1/e/a028a0d9b6ba6913cec11b02?renderMode=0&uiState=698dfbff12f49a3b6a552260"},
              {"src": "onshape4.png", "desc": "3D Summer camp Makers Badge", "link": "https://cad.onshape.com/documents/d387defa6711edff15be9c55/w/3fd9defa0389ce86039f9116/e/4a7654ec621fd312a036845d?renderMode=0&uiState=698dfb1e1ba3cb88f1dc59ee"}
+          ]
+        },
+        {
+          "title": "Industial Applications",
+          "media_items": [
+            {"src": "cad.png", "desc": "Laminar Flow Water Outlet"},
+            {"src": "cad1.png", "desc": "Water Vortex Creator"}
           ]
         }
       ]
     }
   },
   {
+    "id": "stem-education",
     "category": "Education",
-    "title": "STEM Summer Camp",
-    "description": "Organized and taught a summer curriculum covering LEGO building, Python programming, 3D printing fundamentals, and introductory robotics.",
+    "title": "STEM Education & Teaching",
+    "description": "Organized and taught curriculums covering LEGO building, Python programming, 3D printing, and introductory robotics.",
     "images": [
-        "robotic_camp/camp_1.jpg", "robotic_camp/camp_2.jpg", "robotic_camp/camp_3.jpg", "robotic_camp/camp_4.jpg", 
-        "robotic_camp/camp_5.jpg", "robotic_camp/camp_6.jpg", "robotic_camp/camp_7.jpg", "robotic_camp/camp_8.jpg", 
-        "robotic_camp/camp_9.jpg", "robotic_camp/camp_10.jpg", "robotic_camp/camp_11.jpg", "robotic_camp/camp_12.jpg",
-        "robotic_camp/camp_13.jpg", "robotic_camp/camp_14.jpg", "robotic_camp/camp_15.jpg", "robotic_camp/camp_16.jpg", 
-        "robotic_camp/camp_17.jpg", "robotic_camp/camp_18.jpg", "robotic_camp/camp_19.jpg", "robotic_camp/camp_20.jpg",
-        "robotic_camp/camp_21.jpg", "robotic_camp/camp_22.jpg", "robotic_camp/camp_23.jpg", "robotic_camp/camp_24.jpg", 
-        "robotic_camp/camp_25.jpg", "robotic_camp/camp_26.jpg", "robotic_camp/camp_27.jpg", "robotic_camp/camp_28.jpg",
-        "robotic_camp/camp_29.jpg", "robotic_camp/camp_30.jpg", "robotic_camp/camp_31.jpg", "robotic_camp/camp_32.jpg",
-        "robotic_camp/camp_33.jpg", "robotic_camp/camp_34.jpg", "robotic_camp/camp_35.jpg", "robotic_camp/camp_36.jpg", 
-        "robotic_camp/camp_37.jpg", "robotic_camp/camp_38.jpg", "robotic_camp/camp_39.jpg", "robotic_camp/camp_40.jpg",
-        "robotic_camp/camp_41.jpg", "robotic_camp/camp_42.jpg", "robotic_camp/camp_43.jpg", "robotic_camp/camp_44.jpg", 
-        "robotic_camp/camp_45.jpg", "robotic_camp/camp_46.jpg", "robotic_camp/camp_47.jpg", "robotic_camp/camp_48.jpg",
-        "robotic_camp/camp_49.jpg", "robotic_camp/camp_50.jpg", "robotic_camp/camp_51.jpg", "robotic_camp/camp_52.jpg",
-        "robotic_camp/camp_53.jpg", "robotic_camp/camp_54.jpg", "robotic_camp/camp_55.jpg", "robotic_camp/camp_56.jpg", 
-        "robotic_camp/camp_57.jpg", "robotic_camp/camp_58.jpg", "robotic_camp/camp_59.jpg", "robotic_camp/camp_60.jpg",
-        "robotic_camp/camp_61.jpg", "robotic_camp/camp_62.jpg", "robotic_camp/camp_63.jpg", "robotic_camp/camp_64.jpg", 
-        "robotic_camp/camp_65.jpg", "robotic_camp/camp_66.jpg", "robotic_camp/camp_67.jpg", "robotic_camp/camp_68.jpg",
-        "robotic_camp/camp_69.jpg", "robotic_camp/lego1.jpg", "robotic_camp/lego2.jpg", "robotic_camp/lego3.jpg", 
-        "robotic_camp/lego4.jpg", "robotic_camp/lego5.jpg", "robotic_camp/lego6.jpg", "robotic_camp/lego7.jpg",
-        "robotic_camp/teaching.jpg"
+        "robotic_camp/teaching.jpg", "robotic_camp/camp_1.jpg", "robotic_camp/lego1.jpeg"
     ],
+    "details": {
+      "type": "project_suite",
+      "intro": "I have extensive experience teaching STEM concepts to various age groups, ranging from intensive summer camps to ongoing weekly curriculum.",
+      "projects": [
+        {
+          "title": "Teacher Introduction",
+          "description": "A look into my teaching style and classroom atmosphere.",
+          "video_files": [
+             {"src": "teacher_intro.mp4", "caption": "Classroom Intro & Teaching Style"}
+          ]
+        },
+        {
+          "title": "STEM Summer Camps",
+          "description": "Intensive summer programs focusing on Robotics, Python, and 3D Printing. Students build projects from scratch over several weeks.",
+          "gallery": [
+            "robotic_camp/camp_1.jpg", "robotic_camp/camp_2.jpg", "robotic_camp/camp_3.jpg", "robotic_camp/camp_4.jpg", 
+            "robotic_camp/camp_5.jpg", "robotic_camp/camp_6.jpg", "robotic_camp/camp_7.jpg", "robotic_camp/camp_8.jpg", 
+            "robotic_camp/camp_9.jpg", "robotic_camp/camp_10.jpg", "robotic_camp/camp_11.jpg", "robotic_camp/camp_12.jpg",
+            "robotic_camp/camp_13.jpg", "robotic_camp/camp_14.jpg", "robotic_camp/camp_15.jpg", "robotic_camp/camp_16.jpg", 
+            "robotic_camp/camp_17.jpg", "robotic_camp/camp_18.jpg", "robotic_camp/camp_19.jpg", "robotic_camp/camp_20.jpg",
+            "robotic_camp/camp_21.jpg", "robotic_camp/camp_22.jpg", "robotic_camp/camp_23.jpg", "robotic_camp/camp_24.jpg", 
+            "robotic_camp/camp_25.jpg", "robotic_camp/camp_26.jpg", "robotic_camp/camp_27.jpg", "robotic_camp/camp_28.jpg",
+            "robotic_camp/camp_29.jpg", "robotic_camp/camp_30.jpg", "robotic_camp/camp_31.jpg", "robotic_camp/camp_32.jpg",
+            "robotic_camp/camp_33.jpg", "robotic_camp/camp_34.jpg", "robotic_camp/camp_35.jpg", "robotic_camp/camp_36.jpg", 
+            "robotic_camp/camp_37.jpg", "robotic_camp/camp_38.jpg", "robotic_camp/camp_39.jpg", "robotic_camp/camp_40.jpg",
+            "robotic_camp/camp_41.jpg", "robotic_camp/camp_42.jpg", "robotic_camp/camp_43.jpg", "robotic_camp/camp_44.jpg", 
+            "robotic_camp/camp_45.jpg", "robotic_camp/camp_46.jpg", "robotic_camp/camp_47.jpg", "robotic_camp/camp_48.jpg",
+            "robotic_camp/camp_49.jpg", "robotic_camp/camp_50.jpg", "robotic_camp/camp_51.jpg", "robotic_camp/camp_52.jpg",
+            "robotic_camp/camp_53.jpg", "robotic_camp/camp_54.jpg", "robotic_camp/camp_55.jpg", "robotic_camp/camp_56.jpg", 
+            "robotic_camp/camp_57.jpg", "robotic_camp/camp_58.jpg", "robotic_camp/camp_59.jpg", "robotic_camp/camp_60.jpg",
+            "robotic_camp/camp_61.jpg", "robotic_camp/camp_62.jpg", "robotic_camp/camp_63.jpg", "robotic_camp/camp_64.jpg", 
+            "robotic_camp/camp_65.jpg", "robotic_camp/camp_66.jpg", "robotic_camp/camp_67.jpg", "robotic_camp/camp_68.jpg",
+            "robotic_camp/camp_69.jpg"
+          ]
+        },
+        {
+          "title": "Everyday Classes",
+          "description": "Ongoing weekly curriculum covering: <br>• <strong>Minecraft Education:</strong> Logic gates and redstone engineering.<br>• <strong>LEGO Engineering:</strong> Structural stability and gear ratios.<br>• <strong>English (ESL):</strong> Conversational and technical English.",
+          "gallery": [
+            "robotic_camp/teaching.jpg", 
+            "robotic_camp/lego1.jpeg", "robotic_camp/lego2.jpeg", "robotic_camp/lego3.jpeg", 
+            "robotic_camp/lego4.jpeg", "robotic_camp/lego5.jpeg", "robotic_camp/lego6.jpeg", "robotic_camp/lego7.jpeg"
+          ]
+        }
+      ]
+    },
     "url": "#",
-    "link_text": "Event Photos"
+    "link_text": "View Curriculum"
   }
 ]
