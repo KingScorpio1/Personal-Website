@@ -340,6 +340,12 @@ footer {
     .hero h1 { font-size: 2rem; }
     .hero-img img { width: 220px; height: 220px; } /* Smaller hex on phone */
 
+    .hero-content .btn, 
+    .hero-content .btn-outline {
+        display: inline-block;
+        margin: 10px 5px; /* Adds space above/below buttons on phone */
+    }
+
     /* Grid adjustments */
     .portfolio-grid, .social-grid { grid-template-columns: 1fr; }
     
