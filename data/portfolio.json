@@ -1,67 +1,165 @@
 [
   {
+    "id": "robotics-suite",
     "category": "Robotics",
-    "title": "Hexapod Robot",
-    "description": "A 6-legged walking robot designed for stability and terrain traversal. Features inverse kinematics for smooth movement.",
-    "image": "hexapod.png",
-    "video_url": "https://youtube.com/your-hexapod-link",
-    "link_text": "Watch Demo"
-  },
-  {
-    "category": "Robotics",
-    "title": "Mars Rover Prototype",
-    "description": "A prototype rover featuring rocker-bogie suspension system for obstacle climbing, similar to NASA designs.",
-    "image": "rover.jpg",
-    "video_url": "https://www.youtube.com/embed/sDz3ktQBFWw",
-    "link_text": "Watch Demo"
-  },
-  {
-    "category": "Robotics",
-    "title": "Omnidirectional Frisbee Launcher",
-    "description": "A mobile robot featuring mecanum wheels for agile movement. Designed with a custom spiral gravity-fed magazine and a dual-flywheel launching mechanism for rapid-fire capability. Modeled in SolidWorks.",
-    "image": "frisbee_launcher.png",
+    "title": "Advanced Robotics Projects",
+    "description": "A collection of mobile robots focusing on kinematics, suspension systems, and omnidirectional movement.",
+    "images": ["hexapod.png", "rover.jpg", "frisbee_launcher.png"],
+    "details": {
+      "type": "project_suite",
+      "intro": "My robotics work focuses on mechanical design (SolidWorks), inverse kinematics (Python/C++), and control systems. Below are my three flagship prototypes.",
+      "projects": [
+        {
+          "title": "Hexapod Robot",
+          "description": "A 6-legged walking robot designed for stability and terrain traversal. Features inverse kinematics for smooth movement.",
+          "video_url": "https://www.youtube.com/embed/6dmDotcvfVQ"
+        },
+        {
+          "title": "Mars Rover Prototype",
+          "description": "A prototype rover featuring rocker-bogie suspension system for obstacle climbing, similar to NASA designs.",
+          "video_url": "https://www.youtube.com/embed/sDz3ktQBFWw"
+        },
+        {
+          "title": "Omnidirectional Frisbee Launcher",
+          "description": "A mobile robot featuring mecanum wheels for agile movement. Designed with a custom spiral gravity-fed magazine and a dual-flywheel launching mechanism.",
+          "image": "frisbee_launcher.png",
+          "pdf_url": "/static/docs/frisbee_drawings.pdf",
+          "link_text": "View Engineering Drawings (PDF)"
+        }
+      ]
+    },
     "url": "#",
-    "link_text": "View Design"
+    "link_text": "View Suite"
   },
   {
+    "id": "electronics-suite",
     "category": "Electronics",
-    "title": "Dual-Axis Solar Tracker",
-    "description": "Implemented two versions: LDR-based (Light Dependent Resistor) and Wi-Fi enabled for remote monitoring and efficiency tracking.",
-    "image": "tracker.png",
-    "url": "https://github.com/yourname/solar-tracker",
-    "link_text": "View Code"
+    "title": "Embedded Systems & Electronics",
+    "description": "Microcontroller projects involving IoT, sensor tracking, and logic displays.",
+    "images": ["embedded/embed2.jpeg", "tracker.png"],
+    "details": {
+      "type": "project_suite",
+      "intro": "Bridging the gap between software logic and physical hardware using Arduino and ESP32.",
+      "projects": [
+        {
+          "title": "Embedded Systems & LEDs",
+          "description": "Programming microcontrollers for visual displays and logic operations. Focusing on timing and hardware integration.",
+          "video_files": [
+             {"src": "embedded/led_sequence.mp4", "caption": "Custom LED timing sequence."},
+             {"src": "embedded/segment_display.mp4", "caption": "7-Segment display counter logic."}
+          ]
+        },
+        {
+          "title": "Dual-Axis Solar Tracker",
+          "description": "Implemented two versions: LDR-based (Light Dependent Resistor) and Wi-Fi enabled for remote monitoring and efficiency tracking.",
+          "image": "tracker.png"
+        }
+      ]
+    }
   },
   {
+    "id": "software-suite",
     "category": "Software",
-    "title": "Teacher Attendance Platform",
-    "description": "A web platform to streamline attendance tracking for educational institutes, reducing paperwork and errors.",
-    "image": "attendance.jpg",
-    "url": "#",
-    "link_text": "View Screenshots"
+    "title": "Web Platforms & Education",
+    "description": "Full-stack web applications designed to solve educational management problems.",
+    "images": ["teacher_software/snap.jpeg", "english_platform.png"],
+    "details": {
+      "type": "project_suite",
+      "intro": "Software solutions built to streamline workflows in educational environments.",
+      "projects": [
+        {
+          "title": "Teacher Attendance Platform",
+          "description": "A web platform to streamline attendance tracking, reducing paperwork. Teachers log in, view specific classes, and mark attendance in real-time.",
+          "media_items": [
+            {"src": "teacher_software/snap.jpeg", "caption": "Login Screen with secure authentication."},
+            {"src": "teacher_software/snap2.jpeg", "caption": "User Dashboard view."},
+            {"src": "teacher_software/snap3.jpeg", "caption": "Class Calendar interface."},
+            {"src": "teacher_software/snap4.jpeg", "caption": "Student Attendance marking."},
+            {"src": "teacher_software/snap5.jpeg", "caption": "Class selection interface."},
+            {"src": "teacher_software/snap6.jpeg", "caption": "Student list and marking status."},
+            {"src": "teacher_software/snap7.jpeg", "caption": "Monthly Report generation."},
+            {"src": "teacher_software/snap8.jpeg", "caption": "Monthly Expenses generation."},
+            {"src": "teacher_software/snap1.jpeg", "caption": "Monthly Payroll generation."}
+          ]
+        },
+        {
+          "title": "English Learning Platform",
+          "description": "Interactive learning management system designed to help students improve English skills through gamified lessons.",
+          "image": "english_platform.png"
+        }
+      ]
+    }
   },
   {
-    "category": "Software",
-    "title": "English Learning Platform",
-    "description": "Interactive learning management system designed to help students improve English skills through gamified lessons.",
-    "image": "english_platform.png",
-    "url": "#",
-    "link_text": "View Project"
-  },
-  {
+    "id": "android-apps",
     "category": "Mobile App",
     "title": "Android Utility Apps",
     "description": "Various Android applications developed using Java/Kotlin, focusing on user utility and material design.",
-    "image": "android.jpg",
-    "url": "#",
-    "link_text": "View on PlayStore"
+    "images": ["android/android.jpg", "android/reggae1.jpeg", "android/herbal1.jpeg", "android/cooks1.jpeg", 
+                "android/art1.jpeg", "android/void1.jpeg"
+    ],
+    "details": {
+      "type": "text_heavy",
+      "intro": "I focus on building utility apps that solve specific real-world problems. Here is a breakdown of my work.",
+      "content": [
+        {
+          "header": "App 1: Irie Herbs",
+          "body": "Ancient Wisdom, Reimagined for the Modern Soul. Sub-headline: Your pocket ethnobotanist. Discover natural remedies, find herbal alternatives to pharmaceuticals, and track your spirit's alignment—all in one place.",
+          "img": ["android/herbal1.jpeg", "android/herbal2.jpeg", "android/herbal3.jpeg", "android/herbal4.jpeg"]
+        },
+        {
+          "header": "App 2: Irie Cooks",
+          "body": "Cook Smarter, Plan Better, Shop Together. IrieCooks is the all-in-one kitchen assistant that brings your recipes, meal plans, and grocery lists into one beautiful, dark-mode experience. Import recipes from the web with a single tap, plan your week, and sync your shopping list with your family in real-time.",
+          "img": ["android/cooks1.jpeg", "android/cooks2.jpeg", "android/cooks3.jpeg", "android/cooks4.jpeg"]
+        },
+        {
+          "header": "App 3: Reggae Reps",
+          "body": "Welcome to ReggaeReps, the fitness command center that turns your yearly goals into a tactical campaign. Forget generic workout apps; engage in Operation: Iron Year. Whether you are building mass, shredding fat, or mastering calisthenics, ReggaeReps provides the structure you need with the vibe you want. From the Active Mission Mode that guides you through every rep and rest period, to the Biometric Wireframe that visualizes your physical transformation, every feature is built to keep you ranked up and moving forward. Deploy tactical tunes directly from the dashboard and turn your grind into a groove.",
+          "img": ["android/reggae1.jpeg", "android/reggae2.jpeg", "android/reggae3.jpeg", "android/reggae4.jpeg", "android/reggae5.jpeg"]
+        },
+        {
+          "header": "App 4: Irie FlipArt",
+          "body": "IrieFlipArt isn't just a drawing app; it’s a fluid animation studio. With our unique floating, collapsible toolbars, your canvas takes center stage. Sketch, smudge, blur, and animate without the clutter. Whether you’re sketching a quick idea or rendering a masterpiece, find your flow with IrieFlipArt.",
+          "img": ["android/art1.jpeg", "android/art2.jpeg", "android/art3.jpeg", "android/art4.jpeg"]
+        },
+        {
+          "header": "App 5: Neon Void",
+          "body": "Dive into a high-octane, retro-futuristic battlefield where precision meets chaos. Pilot your craft through a vibrant, ever-shifting digital void, tearing through waves of AI-driven enemies in a symphony of light and lasers. It’s not just a survival shooter—it’s a test of reflexes in a world of pure neon.",
+          "img": ["android/void1.jpeg", "android/void2.jpeg", "android/void3.jpeg"]
+        }
+      ]
+    }
   },
   {
+    "id": "design-hub",
     "category": "Design",
-    "title": "3D CAD Projects",
-    "description": "Complex mechanical assemblies and parts designed in SolidWorks and Fusion 360 for 3D printing and CNC.",
+    "title": "3D CAD & Design Hub",
+    "description": "Complex mechanical assemblies, and parts designed in SolidWorks and Fusion 360 for 3D printing and CNC.",
     "image": "cad.png",
-    "url": "#",
-    "link_text": "View Gallery"
+    "details": {
+      "type": "design_hub",
+      "intro": "I specialize in SolidWorks and OnShape. Below are my featured designs and educational content.",
+      "hire_cta": true,
+      "sections": [
+        {
+          "title": "Mechanical Assemblies",
+          "media_items": [
+            {"src": "frisbee_launcher.png", "desc": "Omnidirectional Frisbee Launcher (PDF Available)", "link": "/static/docs/frisbee_drawings.pdf"},
+            {"src": "hexapod.png", "desc": "Hexapod Chassis Design", "link": "https://youtube.com/embed/437DqY5ILc8"}
+          ]
+        },
+        {
+          "title": "OnShape Education",
+          "media_items": [
+             {"src": "onshape1.png", "desc": "Intro to CAD Class Day 1 (View on Onshape)", "link": "https://cad.onshape.com/documents/0e9850c279b6da4bee417922/w/0786b67dda502f11bc9d5aa1/e/0efc14ba3e35ebf9aad83758?renderMode=0&uiState=698dfc357bdf5a729afc16ac"},
+             {"src": "onshape2.png", "desc": "CAD Class Day 2 (View on Onshape)", "link": "https://cad.onshape.com/documents/2b330b6e3d6bbe91020901ec/w/190d8b0e8f5f2888723e1da1/e/18501b3ce0ae607cf4e7f5b8?renderMode=0&uiState=698dfc227bdf5a729afc1624"},
+             {"src": "onshape3.png", "desc": "CAD Class Day 3 (View on Onshape)", "link": "https://cad.onshape.com/documents/e7a5295ae326459fedc39825/w/1fa6c29a326e058742f8b00f/e/182a25308a0598cb5a8dc79f?renderMode=0&uiState=698dfc64f7439ef094742c5f"},
+             {"src": "onshape3.png", "desc": "CAD Class Day 4 (View on Onshape)", "link": "https://cad.onshape.com/documents/7b909ad022bee3c8942f1f7a/w/b0f27e22155fcc53552b7ec1/e/a028a0d9b6ba6913cec11b02?renderMode=0&uiState=698dfbff12f49a3b6a552260"},
+             {"src": "onshape4.png", "desc": "3D Summer camp Makers Badge", "link": "https://cad.onshape.com/documents/d387defa6711edff15be9c55/w/3fd9defa0389ce86039f9116/e/4a7654ec621fd312a036845d?renderMode=0&uiState=698dfb1e1ba3cb88f1dc59ee"}
+          ]
+        }
+      ]
+    }
   },
   {
     "category": "Education",
@@ -85,7 +183,9 @@
         "robotic_camp/camp_57.jpg", "robotic_camp/camp_58.jpg", "robotic_camp/camp_59.jpg", "robotic_camp/camp_60.jpg",
         "robotic_camp/camp_61.jpg", "robotic_camp/camp_62.jpg", "robotic_camp/camp_63.jpg", "robotic_camp/camp_64.jpg", 
         "robotic_camp/camp_65.jpg", "robotic_camp/camp_66.jpg", "robotic_camp/camp_67.jpg", "robotic_camp/camp_68.jpg",
-        "robotic_camp/camp_69.jpg", "robotic_camp/teaching.jpg"
+        "robotic_camp/camp_69.jpg", "robotic_camp/lego1.jpg", "robotic_camp/lego2.jpg", "robotic_camp/lego3.jpg", 
+        "robotic_camp/lego4.jpg", "robotic_camp/lego5.jpg", "robotic_camp/lego6.jpg", "robotic_camp/lego7.jpg",
+        "robotic_camp/teaching.jpg"
     ],
     "url": "#",
     "link_text": "Event Photos"

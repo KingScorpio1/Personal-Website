@@ -17,6 +17,23 @@ def index():
 def about():
     return render_template("about.html")
 
+# Add this function to find a project by ID
+def get_project_by_id(project_id):
+    with open("data/portfolio.json", encoding='utf-8') as f:
+        projects = json.load(f)
+        for p in projects:
+            if p.get("id") == project_id:
+                return p
+    return None
+
+# The New Route for Detail Pages
+@app.route("/portfolio/<project_id>")
+def project_detail(project_id):
+    project = get_project_by_id(project_id)
+    if not project:
+        return render_template("404.html"), 404
+    return render_template("project_detail.html", project=project)
+
 @app.route("/resume")
 def resume():
     # ADDED: encoding='utf-8'

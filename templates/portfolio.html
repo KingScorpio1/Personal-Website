@@ -163,11 +163,9 @@
         
         <!-- Buttons -->
         {% if project.video_url %}
-            <a href="#" 
-            onclick="openVideoModal('{{ project.video_url }}', '{{ project.title }}'); return false;" 
-            class="btn" style="font-size: 0.9rem;">
-                ▶ {{ project.link_text }}
-            </a>
+            <a href="#" onclick="openVideoModal('{{ project.video_url }}', '{{ project.title }}'); return false;" class="btn" style="font-size: 0.9rem;">▶ {{ project.link_text }}</a>
+        {% elif project.id %}
+            <a href="/portfolio/{{ project.id }}" class="btn">View Details &rarr;</a>
         {% elif project.url and project.url != '#' %}
             <a href="{{ project.url }}" target="_blank" class="btn-outline" style="font-size: 0.9rem;">🔗 {{ project.link_text }}</a>
         {% endif %}

@@ -1,0 +1,319 @@
+{% extends "base.html" %}
+{% block title %}{{ project.title }} - Sule Smith{% endblock %}
+
+{% block content %}
+<style>
+    .detail-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    .back-btn { display: inline-block; margin-bottom: 20px; color: #03dac6; text-decoration: none; font-weight: bold; }
+    .detail-header { text-align: center; margin-bottom: 40px; }
+    .detail-header h1 { color: #bb86fc; font-size: 2.5rem; }
+    .intro-text { font-size: 1.1rem; color: #ddd; max-width: 800px; margin: 0 auto 30px auto; line-height: 1.8; text-align: center; }
+    
+    /* SHARED STYLES */
+    .hire-box { background: linear-gradient(45deg, #1e1e1e, #2a2a2a); border: 2px solid #03dac6; padding: 30px; text-align: center; border-radius: 10px; margin: 40px 0; }
+    .hire-btn { background: #03dac6; color: #000; padding: 10px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px; cursor: pointer; border: none; }
+    .hire-btn:hover { background: #018786; }
+
+    /* --- SUITE / LIST LAYOUT --- */
+    .suite-project { margin-bottom: 60px; border-bottom: 1px solid #333; padding-bottom: 40px; }
+    .suite-project:last-child { border-bottom: none; }
+    .suite-title { color: #03dac6; font-size: 1.8rem; margin-bottom: 10px; }
+    .suite-desc { font-size: 1.1rem; color: #ccc; margin-bottom: 20px; line-height: 1.6; }
+    
+    .media-container { width: 100%; max-width: 800px; margin: 0 auto; }
+    .suite-img { width: 100%; border-radius: 8px; }
+    .suite-video { width: 100%; aspect-ratio: 16/9; border-radius: 8px; border: none; background: #000; }
+    
+    /* --- FIXED HEIGHT SLIDESHOW (Prevents Jumping) --- */
+    .suite-slideshow { 
+        position: relative; 
+        overflow: hidden; 
+        border-radius: 8px; 
+        background: #000; 
+        /* FIXED HEIGHT: This stops the page from moving up/down */
+        height: 500px; 
+        width: 100%;
+    }
+    
+    .my-slide { 
+        display: none; 
+        text-align: center; 
+        width: 100%; 
+        height: 100%; /* Fill the fixed container */
+    }
+    
+    /* Ensure the first slide is visible immediately to reduce loading flash */
+    .my-slide:first-child { display: block; } 
+
+    .suite-slideshow img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: contain; /* Ensures image fits inside 500px without stretching */
+    }
+    
+    /* Video Grid */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .video-card { background: #1e1e1e; padding: 10px; border-radius: 8px; text-align: center; }
+    .loop-video { width: 100%; border-radius: 5px; }
+
+    /* --- TEXT HEAVY (Apps) --- */
+    .app-row { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; border-bottom: 1px solid #333; padding-bottom: 30px; }
+    .app-row:nth-child(even) { flex-direction: row-reverse; }
+    .app-text { flex: 1; padding-top: 20px; }
+    .app-text h3 { color: #03dac6; margin-bottom: 10px; font-size: 1.5rem; }
+    
+    /* App Slideshow Container */
+    .app-img-container { flex: 0 0 300px; max-width: 300px; }
+    .mini-slideshow {
+        width: 100%;
+        height: 500px; /* Fixed height for Phone Screenshots */
+        background: #000;
+        border-radius: 8px;
+        position: relative;
+    }
+    .mini-slideshow img { width: 100%; height: 100%; object-fit: contain; }
+
+    /* --- DESIGN HUB GRID --- */
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .detail-card { background: #1e1e1e; padding: 15px; border-radius: 10px; border: 1px solid #333; }
+    .detail-img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 10px; }
+    .caption { color: #aaa; font-style: italic; text-align: center; font-size: 0.9rem; }
+
+    /* Common Slide Elements */
+    .slide-prev, .slide-next {
+        cursor: pointer; position: absolute; top: 50%; width: auto; padding: 10px; 
+        margin-top: -22px; color: white; font-weight: bold; font-size: 18px; 
+        transition: 0.6s ease; user-select: none; background-color: rgba(0,0,0,0.3); z-index: 10;
+    }
+    .slide-next { right: 0; border-radius: 3px 0 0 3px; }
+    .slide-prev { left: 0; border-radius: 0 3px 3px 0; }
+    
+    .fade { animation-name: fade; animation-duration: 1.5s; }
+    @keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+    .slide-caption { 
+        background: rgba(0,0,0,0.85); color: #fff; padding: 15px; 
+        position: absolute; bottom: 0; left: 0; width: 100%; 
+        text-align: center; font-size: 1rem; z-index: 20;
+    }
+
+    /* --- MODAL FOR PDF/VIDEO --- */
+    .modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 3000; background-color: rgba(0,0,0,0.92);
+        display: none; justify-content: center; align-items: center;
+    }
+    .modal-content {
+        position: relative; width: 95%; max-width: 1000px; height: 90vh;
+        background: #000; border-radius: 12px; overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column;
+    }
+    .close-btn {
+        position: absolute; top: 10px; right: 20px; color: #fff;
+        font-size: 32px; font-weight: bold; cursor: pointer; z-index: 100;
+        background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .app-row { flex-direction: column !important; text-align: center; align-items: center; }
+        .app-img-container { flex: auto; width: 100%; max-width: 400px; }
+        
+        /* Adjust heights for mobile */
+        .suite-slideshow { height: 300px; }
+        .mini-slideshow { height: 400px; }
+    }
+</style>
+
+<div class="detail-container">
+    <a href="/portfolio" class="back-btn">← Back to Portfolio</a>
+    
+    <div class="detail-header">
+        <h1>{{ project.title }}</h1>
+        <span style="background: #3700b3; color: white; padding: 5px 10px; border-radius: 4px;">{{ project.category }}</span>
+    </div>
+
+    <p class="intro-text">{{ project.details.intro }}</p>
+
+    <!-- HIRE CTA -->
+    {% if project.details.hire_cta %}
+    <div class="hire-box">
+        <h2>Like these designs?</h2>
+        <p>I am available for freelance CAD & Product Design work.</p>
+        <a href="mailto:smithsule63@gmail.com?subject=Design%20Project%20Inquiry" class="hire-btn">Hire Me for Design</a>
+    </div>
+    {% endif %}
+
+    <!-- TYPE 1: PROJECT SUITE (Robotics, Electronics, Software) -->
+    {% if project.details.type == 'project_suite' %}
+        {% for sub_project in project.details.projects %}
+        <div class="suite-project">
+            <h2 class="suite-title">{{ sub_project.title }}</h2>
+            <p class="suite-desc">{{ sub_project.description }}</p>
+            
+            <div class="media-container">
+                
+                <!-- CASE A: It has a YouTube Video -->
+                {% if sub_project.video_url %}
+                    <iframe class="suite-video" src="{{ sub_project.video_url }}" allowfullscreen></iframe>
+                
+                <!-- CASE B: It has a Slideshow with Captions (Software) -->
+                {% elif sub_project.media_items %}
+                    <div class="slideshow-wrapper suite-slideshow" id="suite-slide-{{ loop.index }}">
+                        {% for item in sub_project.media_items %}
+                        <div class="my-slide fade">
+                            <img src="{{ url_for('static', filename='img/' + item.src) }}" loading="lazy">
+                            <div class="slide-caption">{{ item.caption }}</div>
+                        </div>
+                        {% endfor %}
+                        <a class="slide-prev" onclick="plusSlides(-1, 'suite-slide-{{ loop.index }}')">❮</a>
+                        <a class="slide-next" onclick="plusSlides(1, 'suite-slide-{{ loop.index }}')">❯</a>
+                    </div>
+
+                <!-- CASE C: It has Loop Videos (Electronics) -->
+                {% elif sub_project.video_files %}
+                    <div class="video-grid">
+                        {% for vid in sub_project.video_files %}
+                        <div class="video-card">
+                            <video class="loop-video" autoplay loop muted playsinline>
+                                <source src="{{ url_for('static', filename='img/' + vid.src) }}" type="video/mp4">
+                            </video>
+                            <p class="caption">{{ vid.caption }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                <!-- CASE D: Just a single image + Optional PDF/Link -->
+                {% elif sub_project.image %}
+                    <img src="{{ url_for('static', filename='img/' + sub_project.image) }}" class="suite-img" loading="lazy">
+                    
+                    {% if sub_project.pdf_url %}
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button class="hire-btn" onclick="openPdfModal('{{ sub_project.pdf_url }}')">
+                                <i class="fas fa-file-pdf"></i> {{ sub_project.link_text }}
+                            </button>
+                        </div>
+                    {% elif sub_project.link_url %}
+                        <div style="text-align: center; margin-top: 10px;">
+                            <a href="{{ sub_project.link_url }}" class="back-btn" target="_blank">{{ sub_project.link_text }}</a>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+
+    <!-- TYPE 2: TEXT HEAVY (Apps) -->
+    {% elif project.details.type == 'text_heavy' %}
+        {% for content in project.details.content %}
+        <div class="app-row">
+            <div class="app-text">
+                <h3>{{ content.header }}</h3>
+                <p>{{ content.body }}</p>
+            </div>
+            <div class="app-img-container">
+                {% if content.img is iterable and content.img is not string %}
+                    <div class="slideshow-wrapper mini-slideshow" id="app-slideshow-{{ loop.index }}">
+                        {% for img_path in content.img %}
+                        <div class="my-slide fade">
+                            <img src="{{ url_for('static', filename='img/' + img_path) }}" loading="lazy">
+                        </div>
+                        {% endfor %}
+                        <a class="slide-prev" onclick="plusSlides(-1, 'app-slideshow-{{ loop.index }}')">❮</a>
+                        <a class="slide-next" onclick="plusSlides(1, 'app-slideshow-{{ loop.index }}')">❯</a>
+                    </div>
+                {% else %}
+                    <img src="{{ url_for('static', filename='img/' + content.img) }}" class="suite-img">
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+
+    <!-- TYPE 3: DESIGN HUB -->
+    {% elif project.details.type == 'design_hub' %}
+        {% for section in project.details.sections %}
+        <h2 style="color: #03dac6; margin: 30px 0 15px 0; border-bottom: 1px solid #444;">{{ section.title }}</h2>
+        <div class="detail-grid">
+            {% for item in section.media_items %}
+            <div class="detail-card">
+                <img src="{{ url_for('static', filename='img/' + item.src) }}" class="detail-img" loading="lazy">
+                <p class="caption">
+                    {{ item.desc }}
+                    {% if item.link %} <br><a href="{{ item.link }}" target="_blank" style="color: #bb86fc;">View Link</a>{% endif %}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+
+<!-- PDF / MEDIA MODAL -->
+<div id="mediaModal" class="modal-overlay">
+    <div class="modal-content">
+        <span onclick="closeMediaModal()" class="close-btn">×</span>
+        <iframe id="mediaFrame" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+</div>
+
+<!-- Universal Slideshow Logic -->
+<script>
+    let slideIndices = {}; 
+    let slideTimers = {};
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let containers = document.querySelectorAll('.slideshow-wrapper');
+        containers.forEach(function(container) {
+            let id = container.id;
+            slideIndices[id] = 1;
+            showSlides(1, id);
+        });
+    });
+
+    function plusSlides(n, slideshowId) {
+        clearTimeout(slideTimers[slideshowId]);
+        let current = slideIndices[slideshowId] || 1;
+        showSlides(current + n, slideshowId);
+    }
+
+    function showSlides(n, slideshowId) {
+        let container = document.getElementById(slideshowId);
+        if(!container) return;
+
+        let slides = container.getElementsByClassName("my-slide");
+        if(slides.length === 0) return;
+
+        if (n > slides.length) {n = 1}
+        if (n < 1) {n = slides.length}
+        
+        slideIndices[slideshowId] = n;
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[n-1].style.display = "block";  
+
+        clearTimeout(slideTimers[slideshowId]);
+        slideTimers[slideshowId] = setTimeout(function() {
+            plusSlides(1, slideshowId);
+        }, 4000); 
+    }
+
+    // Modal Logic
+    function openPdfModal(url) {
+        document.getElementById('mediaFrame').src = url;
+        document.getElementById('mediaModal').style.display = 'flex';
+    }
+
+    function closeMediaModal() {
+        document.getElementById('mediaModal').style.display = 'none';
+        document.getElementById('mediaFrame').src = '';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('mediaModal')) {
+            closeMediaModal();
+        }
+    }
+</script>
+{% endblock %}
