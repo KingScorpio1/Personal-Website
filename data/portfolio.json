@@ -153,7 +153,8 @@
         {
           "title": "Additive Manufacturing (3D Printing)",
           "media_items": [
-             {"src": "ocarina.jpeg", "desc": "Multi-Tool Print: Functional Ocarina produced on the Prusa XL."}
+             {"src": "ocarina.jpeg", "desc": "Multi-Tool Print: Functional Ocarina produced on the Prusa XL."},
+             {"src": "mini_water_vortex.jpeg", "desc": "Multi-Tool Print: Functional Water Vortex Creater produced on the Prusa XL."}
           ]
         },
         {
