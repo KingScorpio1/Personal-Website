@@ -134,49 +134,59 @@
 /* --- MOBILE RESUME STYLES --- */
 @media screen and (max-width: 768px) {
     
-    /* Stack the sidebar and main content */
+    /* 1. Reset the Container */
     .resume-container {
         flex-direction: column;
-        margin: 10px; /* Less margin on edges */
+        margin: 0; /* Remove margin so it fits the screen width like the navbar */
+        border-radius: 0; /* Remove corners for full-screen feel */
+        box-shadow: none; /* Optional: cleaner look on mobile */
     }
 
-    /* Make Sidebar full width */
+    /* 2. Fix Sidebar Alignment (The specific symmetry fix) */
     .sidebar {
         width: 100%; 
-        padding: 20px;
-        box-sizing: border-box; /* Ensures padding doesn't break width */
-        text-align: center; /* Center profile pic and contact info */
+        padding: 30px 25px; /* Match standard mobile padding */
+        text-align: left; /* Align Left to match Header Logo */
+        background-color: #252525; /* Slightly distinguishing background */
     }
 
+    /* 3. Fix Profile Picture */
+    .profile-picture {
+        text-align: center; /* Keep picture centered, looks better */
+        margin-bottom: 30px;
+    }
     .profile-picture img {
-        width: 120px;
-        height: 120px;
+        width: 160px; /* Slightly larger on mobile for impact */
+        height: 160px;
     }
 
-    /* Make Main Content full width */
+    /* 4. Fix Main Content Alignment */
     .main-content {
         width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
+        padding: 30px 25px;
+        text-align: left; /* Align Left */
     }
     
-    .main-content h1 {
-        font-size: 2rem;
-        text-align: center;
+    /* 5. Headers Alignment */
+    .sidebar h2, .main-content .section h2 {
+        text-align: left; /* Force headers to the left */
+        border-bottom: 1px solid #3700b3; /* Make underline cleaner */
+        padding-bottom: 5px;
+    }
+    
+    /* 6. Fix the Lists (Bullets) */
+    .sidebar ul {
+        display: block; /* Remove 'inline-block' so it fills width */
+        padding-left: 20px; /* Standard indentation */
+        text-align: left;
     }
     
     .main-content header {
-        text-align: center;
-    }
-
-    /* Align section headers to center for better look */
-    .sidebar h2, .main-content .section h2 {
-        text-align: center;
+        text-align: left;
     }
     
-    /* Fix lists alignment */
-    .sidebar ul {
-        display: inline-block;
-        text-align: left;
+    .main-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 }

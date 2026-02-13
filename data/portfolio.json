@@ -25,6 +25,13 @@
           "image": "frisbee_launcher.png",
           "pdf_url": "/static/docs/frisbee_drawings.pdf",
           "link_text": "View Engineering Drawings (PDF)"
+        },
+        {
+          "title": "Autonomous Obstacle Avoidance Robot",
+          "description": "An autonomous rover designed to navigate dynamic environments without human intervention. It utilizes ultrasonic range finders to detect objects in real-time, executing a custom collision-avoidance algorithm to halt, reverse, and recalculate its path upon detecting proximity.",
+          "video_files": [
+             {"src": "obstacle_robot.mp4", "caption": "Testing autonomous navigation and sensor logic."}
+          ]
         }
       ]
     },
