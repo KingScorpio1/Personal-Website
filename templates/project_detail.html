@@ -24,113 +24,48 @@
     .suite-img { width: 100%; border-radius: 8px; }
     .suite-video { width: 100%; aspect-ratio: 16/9; border-radius: 8px; border: none; background: #000; }
     
-    /* --- FIXED HEIGHT SLIDESHOW --- */
-    .suite-slideshow { 
-        position: relative; overflow: hidden; border-radius: 8px; background: #000; 
-        height: 500px; width: 100%;
-    }
-    .my-slide { display: none; text-align: center; width: 100%; height: 100%; }
-    .my-slide:first-child { display: block; } 
-    .suite-slideshow img { width: 100%; height: 100%; object-fit: contain; }
-    
-    /* Video Grid (UPDATED FOR SIZE) */
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .video-card { background: #1e1e1e; padding: 10px; border-radius: 8px; text-align: center; }
-    
-    .loop-video { 
-        width: 100%; 
-        max-height: 500px; /* Limits height so vertical videos don't stretch page */
-        object-fit: contain; /* Ensures entire video is visible */
-        border-radius: 5px; 
+    /* --- SLIDESHOW CONTAINER (Fixed Height to stop jumping) --- */
+    .slideshow-wrapper {
+        position: relative;
+        overflow: hidden; 
         background: #000;
-    }
-
-    /* --- TEXT HEAVY (Apps) --- */
-    .app-row { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; border-bottom: 1px solid #333; padding-bottom: 30px; }
-    .app-row:nth-child(even) { flex-direction: row-reverse; }
-    .app-text { flex: 1; padding-top: 20px; }
-    .app-text h3 { color: #03dac6; margin-bottom: 10px; font-size: 1.5rem; }
-    
-    .app-img-container { flex: 0 0 300px; max-width: 300px; }
-    .mini-slideshow { width: 100%; height: 500px; background: #000; border-radius: 8px; position: relative; }
-    .mini-slideshow img { width: 100%; height: 100%; object-fit: contain; }
-
-    /* --- DESIGN HUB GRID --- */
-    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .detail-card { background: #1e1e1e; padding: 15px; border-radius: 10px; border: 1px solid #333; }
-    .detail-img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 10px; }
-    .caption { color: #aaa; font-style: italic; text-align: center; font-size: 0.9rem; }
-
-    /* Common Slide Elements */
-    .slide-prev, .slide-next {
-        cursor: pointer; position: absolute; top: 50%; width: auto; padding: 10px; 
-        margin-top: -22px; color: white; font-weight: bold; font-size: 18px; 
-        transition: 0.6s ease; user-select: none; background-color: rgba(0,0,0,0.3); z-index: 10;
-    }
-    .slide-next { right: 0; border-radius: 3px 0 0 3px; }
-    .slide-prev { left: 0; border-radius: 0 3px 3px 0; }
-    
-    .fade { animation-name: fade; animation-duration: 1.5s; }
-
-    /* --- ACCORDION STYLES --- */
-    .accordion-item {
-        margin-bottom: 15px;
-        border: 1px solid #333;
         border-radius: 10px;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.02);
-    }
-
-    .accordion-header {
+        height: 500px; /* Default Desktop Height */
         width: 100%;
-        padding: 20px;
-        background: #1e1e1e;
-        color: #03dac6;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        font-size: 1.4rem;
-        font-weight: bold;
-        transition: background 0.3s;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    .accordion-header:hover {
-        background: #2a2a2a;
+    /* --- THE SLIDE TRACK (Flexbox for sliding) --- */
+    .slides-track {
+        display: flex; 
+        height: 100%;
+        width: 100%;
+        transition: transform 0.7s cubic-bezier(0.45, 0, 0.55, 1); 
     }
 
-    .accordion-header i {
-        transition: transform 0.3s ease;
-        color: #bb86fc;
+    .my-slide {
+        flex: 0 0 100%; /* Important: Each slide is 100% width */
+        height: 100%;
+        position: relative;
     }
 
-    /* When active, rotate the arrow */
-    .accordion-header.active i {
-        transform: rotate(180deg);
+    .my-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Keeps images responsive inside box */
     }
 
-    /* Content is hidden by default */
-    .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); /* Smoother expansion */
-        background: rgba(0,0,0,0.2);
+    /* Navigation Buttons */
+    .slide-prev, .slide-next {
+        cursor: pointer; position: absolute; top: 50%; width: auto; padding: 15px; 
+        margin-top: -22px; color: white; font-weight: bold; font-size: 20px; 
+        transition: 0.3s ease; user-select: none; background-color: rgba(0,0,0,0.4); z-index: 10;
+        border-radius: 5px;
     }
-
-    /* Padding added only when expanded */
-    .accordion-header.active + .accordion-content {
-        max-height: 4000px; /* High enough to fit long lists */
-        transition: max-height 1s ease-in-out;
-    }
-
-    /* Add extra padding to the grid so the bottom shadow/link isn't cut */
-    .accordion-content .detail-grid {
-        padding: 20px;
-        padding-bottom: 20px; /* Extra space at the very bottom */
-    }
-    @keyframes fade { from {opacity: .4} to {opacity: 1} }
+    .slide-next { right: 10px; }
+    .slide-prev { left: 10px; }
+    .slide-prev:hover, .slide-next:hover { background-color: rgba(0,0,0,0.8); color: #03dac6; }
 
     .slide-caption { 
         background: rgba(0,0,0,0.85); color: #fff; padding: 15px; 
@@ -138,28 +73,54 @@
         text-align: center; font-size: 1rem; z-index: 20;
     }
 
-    /* --- MODAL FOR PDF/VIDEO --- */
-    .modal-overlay {
-        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-        z-index: 3000; background-color: rgba(0,0,0,0.92);
-        display: none; justify-content: center; align-items: center;
-    }
-    .modal-content {
-        position: relative; width: 95%; max-width: 1000px; height: 90vh;
-        background: #000; border-radius: 12px; overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column;
-    }
-    .close-btn {
-        position: absolute; top: 10px; right: 20px; color: #fff;
-        font-size: 32px; font-weight: bold; cursor: pointer; z-index: 100;
-        background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 5px;
+    /* --- VIDEO GRID --- */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .video-card { background: #1e1e1e; padding: 10px; border-radius: 8px; text-align: center; }
+    .loop-video { 
+        width: 100%; max-height: 500px; object-fit: contain; 
+        border-radius: 5px; background: #000;
     }
 
+    /* --- APP LAYOUT (Text Heavy) --- */
+    .app-row { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; border-bottom: 1px solid #333; padding-bottom: 30px; }
+    .app-row:nth-child(even) { flex-direction: row-reverse; }
+    .app-text { flex: 1; padding-top: 20px; }
+    .app-text h3 { color: #03dac6; margin-bottom: 10px; font-size: 1.5rem; }
+    .app-img-container { flex: 0 0 300px; max-width: 300px; }
+    .mini-slideshow { height: 500px; } /* Apps specific height */
+
+    /* --- DESIGN HUB ACCORDION --- */
+    .accordion-item { margin-bottom: 15px; border: 1px solid #333; border-radius: 10px; overflow: hidden; background: rgba(255, 255, 255, 0.02); }
+    .accordion-header { width: 100%; padding: 20px; background: #1e1e1e; color: #03dac6; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: none; font-size: 1.4rem; font-weight: bold; }
+    .accordion-header i { transition: transform 0.3s; color: #bb86fc; }
+    .accordion-header.active i { transform: rotate(180deg); }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: rgba(0,0,0,0.2); }
+    .accordion-header.active + .accordion-content { max-height: 4000px; }
+    .accordion-content .detail-grid { padding: 20px; padding-bottom: 60px; } /* Extra padding for bottom content */
+    
+    .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .detail-card { background: #1e1e1e; padding: 15px; border-radius: 10px; border: 1px solid #333; }
+    .detail-img { width: 100%; border-radius: 5px; }
+    .caption { color: #aaa; font-style: italic; text-align: center; font-size: 0.9rem; }
+
+    /* MODAL */
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 3000; background-color: rgba(0,0,0,0.92); display: none; justify-content: center; align-items: center; }
+    .modal-content { position: relative; width: 95%; max-width: 1000px; height: 90vh; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; }
+    .close-btn { position: absolute; top: 10px; right: 20px; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; z-index: 100; background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 5px; }
+
+    /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 768px) {
         .app-row { flex-direction: column !important; text-align: center; align-items: center; }
         .app-img-container { flex: auto; width: 100%; max-width: 400px; }
-        .suite-slideshow { height: 300px; }
-        .mini-slideshow { height: 400px; }
+        
+        /* Reduce fixed height for phones so it's not too tall */
+        .slideshow-wrapper, 
+        .suite-slideshow, 
+        .mini-slideshow,
+        .loop-video { 
+            height: 300px !important; 
+            max-height: 300px !important;
+        }
     }
 </style>
 
@@ -195,45 +156,59 @@
                 {% if sub_project.video_url %}
                     <iframe class="suite-video" src="{{ sub_project.video_url }}" allowfullscreen></iframe>
                 
-                <!-- CASE B: Gallery Slideshow -->
+                <!-- CASE B: Gallery Slideshow (Teacher/Camp) -->
                 {% elif sub_project.gallery %}
-                    <div class="slideshow-wrapper suite-slideshow" id="suite-slide-{{ loop.index }}">
-                        {% for img in sub_project.gallery %}
-                        <div class="my-slide fade">
-                            <img src="{{ url_for('static', filename='img/' + img) }}" loading="lazy">
+                    <div class="slideshow-wrapper" id="suite-slide-{{ loop.index }}">
+                        <div class="slides-track">
+                            {% for img in sub_project.gallery %}
+                            <div class="my-slide">
+                                <img src="{{ url_for('static', filename='img/' + img) }}" loading="lazy">
+                            </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
                         <a class="slide-prev" onclick="plusSlides(-1, 'suite-slide-{{ loop.index }}')">❮</a>
                         <a class="slide-next" onclick="plusSlides(1, 'suite-slide-{{ loop.index }}')">❯</a>
                     </div>
 
-                <!-- CASE C: File Videos (GIF vs standard Video) -->
+                <!-- CASE C: Media Items (Software/Lego with Captions) -->
+                {% elif sub_project.media_items %}
+                    <div class="slideshow-wrapper" id="suite-slide-{{ loop.index }}">
+                        <div class="slides-track">
+                            {% for item in sub_project.media_items %}
+                            <div class="my-slide">
+                                <img src="{{ url_for('static', filename='img/' + item.src) }}" loading="lazy">
+                                {% if item.caption %}
+                                    <div class="slide-caption">{{ item.caption }}</div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <a class="slide-prev" onclick="plusSlides(-1, 'suite-slide-{{ loop.index }}')">❮</a>
+                        <a class="slide-next" onclick="plusSlides(1, 'suite-slide-{{ loop.index }}')">❯</a>
+                    </div>
+
+                <!-- CASE D: File Videos (GIF vs Video) -->
                 {% elif sub_project.video_files %}
                     <div class="video-grid">
                         {% for vid in sub_project.video_files %}
                         <div class="video-card">
-                            
                             {% if sub_project.is_gif %}
-                                <!-- GIF Style: Silent, looping, autoplay -->
                                 <video class="loop-video" autoplay loop muted playsinline>
                                     <source src="{{ url_for('static', filename='img/' + vid.src) }}" type="video/mp4">
                                 </video>
                             {% else %}
-                                <!-- Standard Video: Has controls and audio -->
                                 <video class="loop-video" controls playsinline>
                                     <source src="{{ url_for('static', filename='img/' + vid.src) }}" type="video/mp4">
                                 </video>
                             {% endif %}
-                            
                             <p class="caption">{{ vid.caption }}</p>
                         </div>
                         {% endfor %}
                     </div>
 
-                <!-- CASE D: Single Image + PDF/Link -->
+                <!-- CASE E: Single Image -->
                 {% elif sub_project.image %}
                     <img src="{{ url_for('static', filename='img/' + sub_project.image) }}" class="suite-img" loading="lazy">
-                    
                     {% if sub_project.pdf_url %}
                         <div style="text-align: center; margin-top: 15px;">
                             <button class="hire-btn" onclick="openPdfModal('{{ sub_project.pdf_url }}')">
@@ -261,11 +236,13 @@
             <div class="app-img-container">
                 {% if content.img is iterable and content.img is not string %}
                     <div class="slideshow-wrapper mini-slideshow" id="app-slideshow-{{ loop.index }}">
-                        {% for img_path in content.img %}
-                        <div class="my-slide fade">
-                            <img src="{{ url_for('static', filename='img/' + img_path) }}" loading="lazy">
+                        <div class="slides-track">
+                            {% for img_path in content.img %}
+                            <div class="my-slide">
+                                <img src="{{ url_for('static', filename='img/' + img_path) }}" loading="lazy">
+                            </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
                         <a class="slide-prev" onclick="plusSlides(-1, 'app-slideshow-{{ loop.index }}')">❮</a>
                         <a class="slide-next" onclick="plusSlides(1, 'app-slideshow-{{ loop.index }}')">❯</a>
                     </div>
@@ -276,14 +253,11 @@
         </div>
         {% endfor %}
 
-    <!-- TYPE 3: DESIGN HUB (Collapsible Accordion) -->
+    <!-- TYPE 3: DESIGN HUB -->
     {% elif project.details.type == 'design_hub' %}
         {% for section in project.details.sections %}
         <div class="accordion-item">
-            <button class="accordion-header">
-                {{ section.title }}
-                <i class="fas fa-chevron-down"></i>
-            </button>
+            <button class="accordion-header">{{ section.title }} <i class="fas fa-chevron-down"></i></button>
             <div class="accordion-content">
                 <div class="detail-grid">
                     {% for item in section.media_items %}
@@ -305,23 +279,16 @@
             </div>
         </div>
         {% endfor %}
+    {% endif %}
 
-    <!-- COMING SOON / WORK IN PROGRESS SECTION -->
     {% if project.details.coming_soon_text %}
-    <div style="margin-top: 60px; padding: 30px; border: 1px dashed #444; border-radius: 12px; text-align: center; background: rgba(255,255,255,0.02);">
-        <div style="color: #03dac6; font-size: 1.5rem; margin-bottom: 10px;">
-            <i class="fas fa-tools"></i> Project Status: In Progress
-        </div>
-        <p style="color: #888; font-style: italic; max-width: 600px; margin: 0 auto;">
-            {{ project.details.coming_soon_text }}
-        </p>
+    <div style="margin-top: 60px; padding: 30px; border: 1px dashed #444; border-radius: 12px; text-align: center;">
+        <p style="color: #888;">{{ project.details.coming_soon_text }}</p>
     </div>
     {% endif %}
-    {% endif %}
-
 </div>
 
-<!-- PDF / MEDIA MODAL -->
+<!-- PDF MODAL -->
 <div id="mediaModal" class="modal-overlay">
     <div class="modal-content">
         <span onclick="closeMediaModal()" class="close-btn">×</span>
@@ -329,7 +296,6 @@
     </div>
 </div>
 
-<!-- Universal Slideshow Logic -->
 <script>
     let slideIndices = {}; 
     let slideTimers = {};
@@ -341,6 +307,19 @@
             slideIndices[id] = 1;
             showSlides(1, id);
         });
+        
+        // Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                content.style.maxHeight = button.classList.contains('active') ? "4000px" : "0";
+            });
+        });
+        
+        // Open first accordion by default
+        const firstHeader = document.querySelector('.accordion-header');
+        if (firstHeader) firstHeader.click();
     });
 
     function plusSlides(n, slideshowId) {
@@ -353,64 +332,23 @@
         let container = document.getElementById(slideshowId);
         if(!container) return;
 
+        let track = container.querySelector(".slides-track");
         let slides = container.getElementsByClassName("my-slide");
-        if(slides.length === 0) return;
+        if(!slides || slides.length === 0) return;
 
-        if (n > slides.length) {n = 1}
-        if (n < 1) {n = slides.length}
-        
-        slideIndices[slideshowId] = n;
+        if (n > slides.length) { slideIndices[slideshowId] = 1; }
+        else if (n < 1) { slideIndices[slideshowId] = slides.length; }
+        else { slideIndices[slideshowId] = n; }
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slides[n-1].style.display = "block";  
+        let currentIndex = slideIndices[slideshowId] - 1;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
         clearTimeout(slideTimers[slideshowId]);
-        slideTimers[slideshowId] = setTimeout(function() {
-            plusSlides(1, slideshowId);
-        }, 4000); 
+        slideTimers[slideshowId] = setTimeout(() => plusSlides(1, slideshowId), 5000); 
     }
 
-    // Modal Logic
-    function openPdfModal(url) {
-        document.getElementById('mediaFrame').src = url;
-        document.getElementById('mediaModal').style.display = 'flex';
-    }
-
-    function closeMediaModal() {
-        document.getElementById('mediaModal').style.display = 'none';
-        document.getElementById('mediaFrame').src = '';
-    }
-
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('mediaModal')) {
-            closeMediaModal();
-        }
-    }
-    // --- ACCORDION LOGIC ---
-    document.querySelectorAll('.accordion-header').forEach(button => {
-        button.addEventListener('click', () => {
-            // Toggle active class on the button
-            button.classList.toggle('active');
-            
-            const content = button.nextElementSibling;
-            
-            // If we just opened it, ensure it's tall enough
-            if (button.classList.contains('active')) {
-                // We use a very large number for max-height to accommodate 
-                // images loading or window resizing
-                content.style.maxHeight = "4000px"; 
-            } else {
-                content.style.maxHeight = "0";
-            }
-        });
-    });
-
-    // Optional: Open the first category by default
-    document.addEventListener("DOMContentLoaded", () => {
-        const firstHeader = document.querySelector('.accordion-header');
-        if (firstHeader) firstHeader.click();
-    });
+    function openPdfModal(url) { document.getElementById('mediaFrame').src = url; document.getElementById('mediaModal').style.display = 'flex'; }
+    function closeMediaModal() { document.getElementById('mediaModal').style.display = 'none'; document.getElementById('mediaFrame').src = ''; }
+    window.onclick = function(event) { if (event.target == document.getElementById('mediaModal')) closeMediaModal(); }
 </script>
 {% endblock %}

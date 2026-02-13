@@ -200,12 +200,45 @@
           "title": "Teacher Introduction",
           "description": "A look into my teaching style and classroom atmosphere.",
           "video_files": [
-             {"src": "teacher_intro.mp4", "caption": "Classroom Intro & Teaching Style"}
+             {"src": "teacher_intro.mp4", "caption": "Teaching Philosophy in Action"}
           ]
         },
         {
-          "title": "STEM Summer Camps",
-          "description": "Intensive summer programs focusing on Robotics, Python, and 3D Printing. Students build projects from scratch over several weeks.",
+          "title": "Minecraft Education: Logic & Design",
+          "description": "Using Minecraft as a CAD and Logic simulator. We cover logic gates, Redstone circuitry, and structural architecture.",
+          "is_gif": true,
+          "video_files": [
+             {"src": "robotic_camp/minecraft_v1.mp4", "caption": "Bingo Winner"},
+             {"src": "robotic_camp/minecraft_v2.mp4", "caption": "Bingo Winner"}
+          ]
+        },
+        {
+          "title": "LEGO Engineering Curriculum",
+          "description": "Weekly sessions where students explore mechanical advantage, gear ratios, and structural integrity through LEGO Technic and customized builds.",
+          "media_items": [
+            {"src": "robotic_camp/lego1.jpeg", "caption": "Mechanical Gear Ratios"},
+            {"src": "robotic_camp/lego2.jpeg", "caption": "Mechanical Gear Ratios"},
+            {"src": "robotic_camp/lego3.jpeg", "caption": "Mechanical Gear Ratios"},
+            {"src": "robotic_camp/lego5.jpeg", "caption": "Mechanical Gear Ratios"},
+            {"src": "robotic_camp/lego8.jpeg", "caption": "Lego Animal: The Elepant"},
+            {"src": "robotic_camp/lego15.jpeg", "caption": "Lego Insect: The creepie crawler"}
+          ]
+        },
+        {
+          "title": "Career Exploration & Future STEM",
+          "description": "A series of sessions focused on connecting classroom builds to real-world engineering careers and industrial applications.",
+          "is_gif": true,
+          "video_files": [
+             {"src": "robotic_camp/careers_v1.mp4", "caption": "Leg Stimulus Test"},
+             {"src": "robotic_camp/careers_v2.mp4", "caption": "Checking Heart Rate"},
+             {"src": "robotic_camp/careers_v4.mp4", "caption": "Injection Time"},
+             {"src": "robotic_camp/careers_v6.mp4", "caption": "Injections 2.0"},
+             {"src": "robotic_camp/careers_v3.mp4", "caption": "Fever check"}
+          ]
+        },
+        {
+          "title": "Robotics Summer Camps",
+          "description": "High-intensity camps where students build, code, and compete. These photos capture the journey from raw components to functional robots.",
           "gallery": [
             "robotic_camp/camp_1.jpg", "robotic_camp/camp_2.jpg", "robotic_camp/camp_3.jpg", "robotic_camp/camp_4.jpg", 
             "robotic_camp/camp_5.jpg", "robotic_camp/camp_6.jpg", "robotic_camp/camp_7.jpg", "robotic_camp/camp_8.jpg", 
@@ -225,15 +258,6 @@
             "robotic_camp/camp_61.jpg", "robotic_camp/camp_62.jpg", "robotic_camp/camp_63.jpg", "robotic_camp/camp_64.jpg", 
             "robotic_camp/camp_65.jpg", "robotic_camp/camp_66.jpg", "robotic_camp/camp_67.jpg", "robotic_camp/camp_68.jpg",
             "robotic_camp/camp_69.jpg"
-          ]
-        },
-        {
-          "title": "Everyday Classes",
-          "description": "Ongoing weekly curriculum covering: <br>• <strong>Minecraft Education:</strong> Logic gates and redstone engineering.<br>• <strong>LEGO Engineering:</strong> Structural stability and gear ratios.<br>• <strong>English (ESL):</strong> Conversational and technical English.",
-          "gallery": [
-            "robotic_camp/teaching.jpg", 
-            "robotic_camp/lego1.jpeg", "robotic_camp/lego2.jpeg", "robotic_camp/lego3.jpeg", 
-            "robotic_camp/lego4.jpeg", "robotic_camp/lego5.jpeg", "robotic_camp/lego6.jpeg", "robotic_camp/lego7.jpeg"
           ]
         }
       ]
