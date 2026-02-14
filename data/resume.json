@@ -8,37 +8,39 @@
     "address": "701台南市東區府東街203號"
   },
   "technical_skills": [
-    "AutoCAD Designer",
-    "Fusion 360 Designer",
-    "Solidworks",
-    "LabView Oriented",
-    "Robotics Technician",
-    "Driver's License"
+    "SolidWorks & AutoCAD",
+    "Fusion 360",
+    "Python & C++",
+    "PLC Programming",
+    "Robotics Kinematics",
+    "LabView"
   ],
   "languages": [
     {"name": "English", "level": "Native"},
     {"name": "Mandarin", "level": "Intermediate"},
-    {"name": "Spanish", "level": "Basic"},
-    {"name": "Japanese", "level": "Basic"}
+    {"name": "Spanish", "level": "Intermediate"},
+    {"name": "Japanese", "level": "Basic"},
+    {"name": "Korean", "level": "Basic"}
   ],
   "tools": [
-    "Canva",
+    "VS Code",
+    "Git/GitHub",
     "MS Office",
-    "GPT",
-    "Adobe Illustrator"
+    "Adobe Illustrator",
+    "3D Printing Slicers"
   ],
   "professional_skills": [
-    "Teamwork",
-    "Time Management",
-    "Communication",
-    "Problem-Solving",
+    "Project Management",
+    "Cross-functional Teamwork",
+    "Technical Troubleshooting",
+    "Curriculum Development",
     "Adaptability"
   ],
   "education": [
     {
       "institution": "Southern Taiwan University of Science and Technology",
       "degree": "Master of Mechatronics Engineering",
-      "year": "2024 - 2026(expected)",
+      "year": "2024 - 2026 (Expected)",
       "gpa": "4.0"
     },
     {
@@ -55,41 +57,41 @@
       "location": "Kaohsiung, Taiwan",
       "years": "Mar 2025–Aug 2025",
       "description": [
-        "Gained knowledge of semiconductor processes including PVD, CVD, and ALD.",
-        "Gained hands-on experience with advanced semiconductor coating techniques."
-      ]
-    },
-    {
-      "job_title": "Part-time Teacher",
-      "company": "Southern Taiwan",
-      "location": "Tainan, Taiwan",
-      "years": "May 2020–Present",
-      "description": [
-        "Integrated applied STEM projects to enhance English learning.",
-        "Organized and coordinated events for customers with the institute staff.",
-        "Maintained clear communication with students and parents on progress."
+        "Analyzing semiconductor processes including PVD, CVD, and ALD.",
+        "Gaining hands-on experience with advanced semiconductor coating techniques and cleanroom protocols."
       ]
     },
     {
       "job_title": "Assistant Engineer",
       "company": "Tairong Industrial Factory",
       "location": "Tainan, Taiwan",
-      "years": "Dec 2023–Aug 2024",
+      "years": "Dec 2023 – Aug 2024",
       "description": [
-        "Proficient in SolidWorks, with expertise in 3D modeling and engineering drawings for seamless manufacturing.",
-        "Experienced in PLC programming and control logic design for industrial automation.",
-        "Skilled in maintaining and troubleshooting jobsite machinery to reduce downtime and boost efficiency."
+        "Designed 3D models and engineering drawings using SolidWorks for manufacturing equipment.",
+        "Programmed PLC control logic for industrial automation systems to improve line efficiency.",
+        "Performed onsite troubleshooting and maintenance of jobsite machinery to reduce downtime."
       ]
     },
     {
-      "job_title": "Sales Associate",
+      "job_title": "STEM Educator",
+      "company": "Southern Taiwan",
+      "location": "Tainan, Taiwan",
+      "years": "May 2020 – Present",
+      "description": [
+        "Developing and teaching curriculum for Robotics, Minecraft Education, and LEGO Engineering.",
+        "Managing classroom activities and coordinating STEM events for the institute.",
+        "Translating complex engineering concepts into accessible lessons for students."
+      ]
+    },
+    {
+      "job_title": "Sales & Logistics Associate",
       "company": "Ashley's Furniture",
       "location": "Belize City, Belize",
-      "years": "Aug 2018–Jan 2020",
+      "years": "Aug 2018 – Jan 2020",
       "description": [
-        "Solved problems effectively both independently and in teams.",
-        "Maintained a friendly, punctual, and hardworking attitude.",
-        "Efficiently assembled and disassembled all showroom furniture."
+        "Managed showroom inventory and coordinated logistics for client deliveries.",
+        "Executed precise assembly of complex modular furniture systems based on technical schematics.",
+        "Resolved client issues and maintained high service standards in a fast-paced retail environment."
       ]
     }
   ],

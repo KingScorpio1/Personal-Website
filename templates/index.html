@@ -1,18 +1,27 @@
 {% extends "base.html" %}
-{% block title %}Sule Smith - Engineer & Innovator{% endblock %}
+{% block title %}Sule Smith - Mechatronics Engineer{% endblock %}
 
 {% block content %}
 <div class="hero">
     <div class="hero-content">
-        <h2>Mechanical Engineer | Innovator | Entrepreneur</h2>
-        <p>I engineer solutions for a better tomorrow. From advanced robotics and automation to building brands, I bridge the gap between technical complexity and creative innovation.</p>
+        <!-- Clear, Specific Title -->
+        <h1 style="font-size: 2.5rem; color: #03dac6; margin-bottom: 1rem;">
+            Mechatronics Engineer & Full-Stack Developer
+        </h1>
+        
+        <!-- Clear Mission Statement -->
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+            I bridge the gap between mechanical hardware and intelligent software. 
+            From designing <strong>autonomous robots</strong> and <strong>industrial automation</strong> 
+            to building <strong>Android apps</strong> and <strong>web platforms</strong>, 
+            I engineer complete systems from the ground up.
+        </p>
         <br>
-        <a href="/portfolio" class="btn">View My Work</a>
+        <a href="/portfolio" class="btn">See My Engineering Projects</a>
         <a href="/contact" class="btn btn-outline">Contact Me</a>
         <a href="/resume" class="btn btn-outline">My Resume</a>
     </div>
     <div class="hero-img">
-        <!-- THE AI PHOTO GOES HERE -->
         <img src="{{ url_for('static', filename='img/ai_sule.jpeg') }}" alt="Sule Smith AI Avatar">
     </div>
 </div>
