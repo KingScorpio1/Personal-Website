@@ -45,15 +45,20 @@
     }
 
     .my-slide {
-        flex: 0 0 100%; /* Important: Each slide is 100% width */
+        display: flex; /* MUST be flex so caption sits at bottom */
+        flex-direction: column;
+        flex: 0 0 100%; /* CRITICAL: Forces each slide to be exactly 100% of the track width */
         height: 100%;
         position: relative;
+        background-color: #1e1e1e; /* Match card background */
     }
 
     .my-slide img {
         width: 100%;
-        height: 100%;
-        object-fit: contain; /* Keeps images responsive inside box */
+        /* flex: 1 makes the image fill all space NOT used by the caption */
+        flex: 1; 
+        object-fit: contain; /* Ensures image isn't cropped */
+        min-height: 0; /* Crucial for Firefox flex containers */
     }
 
     /* Navigation Buttons */
@@ -68,9 +73,15 @@
     .slide-prev:hover, .slide-next:hover { background-color: rgba(0,0,0,0.8); color: #03dac6; }
 
     .slide-caption { 
-        background: rgba(0,0,0,0.85); color: #fff; padding: 15px; 
-        position: absolute; bottom: 0; left: 0; width: 100%; 
-        text-align: center; font-size: 1rem; z-index: 20;
+        position: relative; /* Changed from absolute */
+        background: #1e1e1e; /* Solid background matching your theme */
+        color: #fff; 
+        padding: 15px; 
+        width: 100%; 
+        text-align: center; 
+        font-size: 0.95rem;
+        z-index: 20;
+        border-top: 1px solid #333; /* Optional: adds a nice separator line */
     }
 
     /* --- VIDEO GRID --- */
@@ -107,6 +118,50 @@
     .modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 3000; background-color: rgba(0,0,0,0.92); display: none; justify-content: center; align-items: center; }
     .modal-content { position: relative; width: 95%; max-width: 1000px; height: 90vh; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; }
     .close-btn { position: absolute; top: 10px; right: 20px; color: #fff; font-size: 32px; font-weight: bold; cursor: pointer; z-index: 100; background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 5px; }
+    .design-fill {
+        background-color: #1e1e1e !important; /* Matches card color (Grey) instead of Black */
+    }
+
+    .design-fill img {
+        /* CHANGED FROM 'cover' TO 'contain' */
+        object-fit: contain !important; 
+        width: 100%;
+        height: 100%;
+    }
+
+    /* --- POP OUT EFFECT (For Grid & App Images) --- */
+    .detail-img, 
+    .suite-img, 
+    .app-img-container img {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy, smooth transition */
+        cursor: pointer;
+        position: relative; /* Required for z-index to work */
+    }
+
+    .detail-img:hover, 
+    .suite-img:hover, 
+    .app-img-container img:hover {
+        transform: scale(1.05); /* Grow 5% larger */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Add deep shadow */
+        z-index: 100; /* Ensure it floats ABOVE everything else */
+    }
+
+    /* --- ZOOM EFFECT (For Slideshows / Design Hub) --- */
+    /* Since slideshows cut off edges, we just zoom the image inside the frame */
+    .my-slide img {
+        transition: transform 0.6s ease; /* Slower, cinematic zoom */
+    }
+
+    .my-slide:hover img {
+        transform: scale(1.1); /* Zoom in 10% */
+    }
+    
+    /* Ensure the video previews also pop */
+    .video-card:hover {
+        transform: scale(1.03);
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
 
     /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 768px) {
@@ -120,6 +175,9 @@
         .loop-video { 
             height: 300px !important; 
             max-height: 300px !important;
+        }
+        .design-fill {
+            height: 500px !important; /* Taller box on phone */
         }
     }
 </style>
@@ -253,28 +311,47 @@
         </div>
         {% endfor %}
 
-    <!-- TYPE 3: DESIGN HUB -->
+    <!-- TYPE 3: DESIGN HUB (Collapsible Accordion + Slideshows) -->
     {% elif project.details.type == 'design_hub' %}
         {% for section in project.details.sections %}
         <div class="accordion-item">
-            <button class="accordion-header">{{ section.title }} <i class="fas fa-chevron-down"></i></button>
+            <button class="accordion-header">
+                {{ section.title }}
+                <i class="fas fa-chevron-down"></i>
+            </button>
             <div class="accordion-content">
-                <div class="detail-grid">
-                    {% for item in section.media_items %}
-                    <div class="detail-card">
-                        {% if item.src.endswith('.mp4') %}
-                            <video class="loop-video" autoplay loop muted playsinline style="width:100%; border-radius:5px;">
-                                <source src="{{ url_for('static', filename='img/' + item.src) }}" type="video/mp4">
-                            </video>
-                        {% else %}
-                            <img src="{{ url_for('static', filename='img/' + item.src) }}" class="detail-img" loading="lazy">
-                        {% endif %}
-                        <p class="caption">
-                            {{ item.desc }}
-                            {% if item.link %} <br><a href="{{ item.link }}" target="_blank" style="color: #bb86fc;">View Link</a>{% endif %}
-                        </p>
+                <!-- Switched from Grid to Slideshow -->
+                <div class="slideshow-wrapper design-fill" id="design-slide-{{ loop.index }}">
+                    <div class="slides-track">
+                        {% for item in section.media_items %}
+                        <div class="my-slide">
+                            
+                            <!-- Logic to handle Video vs Image inside the slide -->
+                            {% if item.src.endswith('.mp4') %}
+                                <video class="loop-video" autoplay loop muted playsinline>
+                                    <source src="{{ url_for('static', filename='img/' + item.src) }}" type="video/mp4">
+                                </video>
+                            {% else %}
+                                <img src="{{ url_for('static', filename='img/' + item.src) }}" loading="lazy">
+                            {% endif %}
+
+                            <!-- Caption Overlay with Link support -->
+                            <div class="slide-caption">
+                                {{ item.desc }}
+                                {% if item.link %} 
+                                    <br>
+                                    <a href="{{ item.link }}" target="_blank" style="color: #03dac6; font-weight: bold; text-decoration: none;">
+                                        View Link <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+                    
+                    <!-- Navigation Buttons -->
+                    <a class="slide-prev" onclick="plusSlides(-1, 'design-slide-{{ loop.index }}')">❮</a>
+                    <a class="slide-next" onclick="plusSlides(1, 'design-slide-{{ loop.index }}')">❯</a>
                 </div>
             </div>
         </div>
@@ -334,19 +411,24 @@
 
         let track = container.querySelector(".slides-track");
         let slides = container.getElementsByClassName("my-slide");
-        if(!slides || slides.length === 0) return;
+        if(!slides || slides.length === 0 || !track) return;
 
+        // Wrap around logic
         if (n > slides.length) { slideIndices[slideshowId] = 1; }
         else if (n < 1) { slideIndices[slideshowId] = slides.length; }
         else { slideIndices[slideshowId] = n; }
 
         let currentIndex = slideIndices[slideshowId] - 1;
+
+        // Move the track left or right. 
+        // Notice we REMOVED the "display: none" loop here!
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+        // Restart Auto-Play
         clearTimeout(slideTimers[slideshowId]);
         slideTimers[slideshowId] = setTimeout(() => plusSlides(1, slideshowId), 5000); 
     }
-
+    
     function openPdfModal(url) { document.getElementById('mediaFrame').src = url; document.getElementById('mediaModal').style.display = 'flex'; }
     function closeMediaModal() { document.getElementById('mediaModal').style.display = 'none'; document.getElementById('mediaFrame').src = ''; }
     window.onclick = function(event) { if (event.target == document.getElementById('mediaModal')) closeMediaModal(); }

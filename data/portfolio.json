@@ -161,7 +161,14 @@
           "title": "Additive Manufacturing (3D Printing)",
           "media_items": [
              {"src": "ocarina.jpeg", "desc": "Multi-Tool Print: Functional Ocarina produced on the Prusa XL."},
-             {"src": "mini_water_vortex.jpeg", "desc": "Multi-Tool Print: Functional Water Vortex Creater produced on the Prusa XL."}
+             {"src": "mini_water_vortex.jpeg", "desc": "Multi-Tool Print: Functional Water Vortex Creater produced on the Prusa XL."},
+             {"src": "print_penguin.jpeg", "desc": "High Contrast: Dual-color 'Scream' Penguin printed in PLA."},
+             {"src": "print_fuzzy_bunny.jpeg", "desc": "Surface Finish: 'Fuzzy Skin' texture application with multi-material eyes/ears."},
+             {"src": "print_keychain.jpeg", "desc": "Material Engineering: Carbon Fiber PLA inlay with Red/White PLA."},
+             {"src": "print_impeller.jpeg", "desc": "Functional Part: High-efficiency turbine impeller with complex geometry."},
+             {"src": "print_pokeball.jpeg", "desc": "Multi-Color: Seamless spherical print produced in one go."},
+             {"src": "print_turbo.jpeg", "desc": "Print-in-Place: Gear bearing turbine produced as a single assembled unit with moving parts."},
+             {"src": "print_CBshield.jpeg", "desc": "Prototyping: Superhero shield design printed in 4 parts (phase 1)."}
           ]
         },
         {
@@ -264,5 +271,55 @@
     },
     "url": "#",
     "link_text": "View Curriculum"
+  },
+  {
+    "id": "semiconductor-internship",
+    "category": "Semiconductor Engineering",
+    "title": "Semiconductor Process Engineering",
+    "description": "Internship focusing on PVD, CVD, and ALD coating technologies, machine maintenance, and cleanroom protocols.",
+    "images": ["semiconductor/cover.jpg", "semiconductor/cleanroom.jpg"],
+    "details": {
+      "type": "project_suite",
+      "intro": "During my 6-month internship at iDABET, I gained hands-on experience with advanced semiconductor manufacturing processes. I documented my progress through detailed monthly reports covering machine operation, troubleshooting, and process optimization.",
+      "projects": [
+        {
+          "title": "Cleanroom & Safety Protocols",
+          "description": "Mastering the ISO-standard cleanroom environment. Gowning procedures, contamination control, and safety protocols for handling hazardous gases and chemicals.",
+          "media_items": [
+            {"src": "semiconductor/cleanroom_1.jpg", "caption": "Semi-Full cleanroom suit protocol."},
+            {"src": "semiconductor/safety_check.jpg", "caption": "Routine safety inspection of gas lines."}
+          ]
+        },
+        {
+          "title": "Thin Film Deposition (PVD, CVD, ALD)",
+          "description": "Operation and maintenance of Physical Vapor Deposition, Chemical Vapor Deposition, and Atomic Layer Deposition machines.",
+          "media_items": [
+            {"src": "semiconductor/pvd_machine.jpg", "caption": "Operating the PVD Sputtering system."},
+            {"src": "semiconductor/cvd_process.jpg", "caption": "Analysis of CVD coating uniformity."},
+            {"src": "semiconductor/ald_setup.webp", "caption": "Setting up precursor materials for ALD."}
+          ]
+        },
+        {
+          "title": "Monthly Internship Reports",
+          "description": "Selected highlights from my technical reports, documenting specific maintenance tasks, error troubleshooting, and process improvements over the 6-month period.",
+          "media_items": [
+            {"src": "semiconductor/month1_report.jpg", "caption": "Month 1: Introduction to Vacuum Systems."},
+            {"src": "semiconductor/month2_maintenance.jpg", "caption": "Month 2: Routine Pump Maintenance."},
+            {"src": "semiconductor/month3_treatment.jpg", "caption": "Month 3: Heat Treatment Process."},
+            {"src": "semiconductor/month4_optimization.jpg", "caption": "Month 4: Optimizing deposition rates."},
+            {"src": "semiconductor/month5_analysis.bmp", "caption": "Month 5: SEM analysis of coating layers."},
+            {"src": "semiconductor/month6_final.jpg", "caption": "Month 6: Final Project Presentation."},
+            {"src": "semiconductor/month6_final1.jpg", "caption": "Month 6: Final Project Presentation Award (2nd Place)."}
+          ]
+        },
+        {
+          "title": "Phase 2: Upcoming Internship (2026)",
+          "description": "I have been invited back to lead a new process optimization project starting later this year.",
+          "image": "semiconductor/return_offer.jpg"
+        }
+      ]
+    },
+    "url": "#",
+    "link_text": "View Internship"
   }
 ]
