@@ -84,4 +84,3 @@ To run this project locally on your machine:
 
 ---
 *Engineered by Sule Smith. Based in Taiwan.*
-```
