@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Certificate of Excellence (2nd Place)",
+    "issuer": "Metal Industries Research & Development Centre (MIRDC)",
+    "date": "August 2025",
+    "has_dual_lang": true,
+    "image_en": "img/certs/mirdc_excellence_en.png",
+    "image_zh": "img/certs/mirdc_excellence_zh.png",
+    "description": "Awarded 2nd place for outstanding performance in the Practical Project Final Presentation (iDABET Project)."
+  },
+  {
+    "title": "Certificate of Completion",
+    "issuer": "Metal Industries Research & Development Centre (MIRDC)",
+    "date": "August 2025",
+    "has_dual_lang": true,
+    "image_en": "img/certs/mirdc_completion_en.png",
+    "image_zh": "img/certs/mirdc_completion_zh.png",
+    "description": "Completed training in Semiconductor Industry Vacuum Equipment and AI Control Applications."
+  },
+  {
+    "title": "AI Collaborative Robot Competency",
+    "issuer": "Techman Robot Inc.",
+    "date": "March 2026",
+    "has_dual_lang": false,
+    "image": "img/certs/techman_ai.png",
+    "description": "Primary level certification for AI collaborative robot operations."
+  },
+  {
+    "title": "Robotics Engineer Qualification",
+    "issuer": "TAIROA",
+    "date": "December 2023",
+    "has_dual_lang": false,
+    "image": "img/certs/tairoa_robotics.png",
+    "description": "Technical skill qualification for Elementary Level Robotics Engineering."
+  }
+]

@@ -41,6 +41,16 @@ def resume():
         resume_data = json.load(f)
     return render_template("resume.html", resume=resume_data)
 
+@app.route('/credentials')
+def credentials():
+    try:
+        with open('data/certifications.json') as f:
+            certs = json.load(f)
+    except FileNotFoundError:
+        certs = [] # Fallback if file isn't created yet
+        
+    return render_template('credentials.html', certifications=certs)
+
 @app.route("/shop")
 def shop():
     with open("data/shop.json", encoding='utf-8') as f:
