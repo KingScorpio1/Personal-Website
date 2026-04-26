@@ -1,5 +1,10 @@
 [
   {
+    "title": "Diving Deeper into Semiconductors: Mastering the PECVD Process",
+    "date": "March 2025",
+    "content": "<p>My internship at iDABET in Kaohsiung has been an incredible journey into the heart of Taiwan's semiconductor industry. Recently, I hit a major and exciting milestone: my mentors have offered me extra, dedicated time to focus specifically on the <strong>PECVD (Plasma-Enhanced Chemical Vapor Deposition)</strong> process.</p><p>While I've already been gaining hands-on experience with standard PVD, CVD, and ALD, PECVD is a fascinating next step. Because it utilizes electrical energy to generate a plasma (rather than relying solely on thermal energy), it allows for thin-film deposition at much lower temperatures. This is absolutely critical for manufacturing next-generation chips without damaging the delicate underlying structures of the wafer.</p><p>Getting hands-on time with these high-vacuum systems—understanding the RF generators, mass flow controllers, and chamber mechanics—is exactly the kind of mechatronics challenge I thrive on. I'm incredibly grateful to the engineering team for trusting me with this advanced equipment. Every extra hour spent in the Class 10000 cleanroom is bridging the gap between my academic mechatronics background and the cutting-edge reality of advanced manufacturing.</p>"
+  },
+  {
     "title": "Building a Hexapod: When Code Meets Mechanics",
     "date": "2026-01-15",
     "content": "<p>Building a six-legged robot isn't just about connecting wires; it's a lesson in <strong>Inverse Kinematics</strong>. When I started designing my Hexapod, the biggest challenge wasn't the 3D printing—it was the math required to make it walk smoothly.</p><p>I used an Arduino-based controller to calculate the precise angle for all 18 servos simultaneously. This project taught me that mechanical design and software logic are inseparable. If the chassis is too heavy, the code has to compensate for motor strain. If the code is inefficient, the robot jitters.</p><p>Check out the video in my portfolio to see it in action!</p>"
