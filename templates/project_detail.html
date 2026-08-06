@@ -273,13 +273,17 @@
                                 <i class="fas fa-file-pdf"></i> {{ sub_project.link_text }}
                             </button>
                         </div>
-                    {% elif sub_project.link_url %}
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="{{ sub_project.link_url }}" class="back-btn" target="_blank">{{ sub_project.link_text }}</a>
-                        </div>
                     {% endif %}
                 {% endif %}
             </div>
+            
+            {% if sub_project.link_url %}
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="{{ sub_project.link_url }}" class="hire-btn" target="_blank">
+                        🔗 {{ sub_project.link_text }}
+                    </a>
+                </div>
+            {% endif %}
         </div>
         {% endfor %}
 

@@ -82,7 +82,9 @@
       "projects": [
         {
           "title": "Teacher Attendance Platform",
-          "description": "A web platform to streamline attendance tracking, reducing paperwork. Teachers log in, view specific classes, and mark attendance in real-time.",
+          "description": "A robust, full-stack <strong>React + Node.js (Express)</strong> attendance dashboard featuring real-time synchronization via <strong>Socket.io</strong> and <strong>PostgreSQL</strong>. Designed to streamline school operations, the platform allows teachers to log in securely, track classroom attendance, schedule calendars, calculate payroll automatically, and manage expenses. Integrates automated PDF report generation (via <strong>PDFKit</strong>) and secure email distributions (via <strong>Nodemailer</strong>) backed by custom Redis queues and worker tasks.",
+          "link_url": "https://teacher-attendance-app-lkha.onrender.com/login",
+          "link_text": "Launch Live Dashboard",
           "media_items": [
             {"src": "teacher_software/snap.jpeg", "caption": "Login Screen with secure authentication."},
             {"src": "teacher_software/snap2.jpeg", "caption": "User Dashboard view."},
@@ -97,13 +99,15 @@
         },
         {
           "title": "English Learning Platform",
-          "description": "Interactive learning management system designed to help students improve English skills through gamified lessons.",
+          "description": "The foundational offline version of the English learning portal built as a desktop GUI. Developed in Python using <strong>CustomTkinter & Tkinter</strong> for a modern dark-theme interface, it utilizes the <strong>Pygame</strong> audio mixer engine for speech sounds and phonics feedback. Features local student database tracking and a full suite of gamified logic/spelling challenges mapped to local JSON curriculum files.",
           "image": "english_learning_platform/english_platform.png"
         },
         {
           "title": "Irie Learn Bilingual 2030 Portal",
           "description": "<strong>Irie Learn</strong> is a world-class, gamified English Learning Management System (LMS) designed for ESL students in Taiwan. Combining a custom 3D Adventure map and progression paths, it features a massive suite of 35+ interactive mini-games (such as <em>Syllable Ninja</em>, <em>Tense Crafter</em>, and <em>Floppy Chicken</em>) and RPG Boss Battles. Built with a responsive <strong>React 18 + Tailwind CSS</strong> client and backed by a <strong>Supabase</strong> cloud datastore with real-time class scoreboards, it includes an AI pedagogical progress summarizer powered by OpenAI GPT-4o-mini.",
           "image": "english_learning_platform/irie_learn/landing_page.png",
+          "link_url": "https://irie-learn-web.onrender.com/",
+          "link_text": "Launch Live Platform",
           "media_items": [
             {"src": "english_learning_platform/irie_learn/landing_page.png", "caption": "Landing Page & Main Title Portal"},
             {"src": "english_learning_platform/irie_learn/login_page.png", "caption": "Login Portal showing student profiles"},
@@ -116,6 +120,8 @@
           "title": "_STEM_MAINFRAME_INIT",
           "description": "<strong>_STEM_MAINFRAME_INIT</strong> (CodeMaster) is a high-fidelity interactive coding education platform. Featuring an immersive hacker-themed terminal UI, it provides real-time in-browser code execution for Python, JavaScript, and C++ via Monaco Editor sandboxes. The platform is enriched with interactive <strong>Three.js</strong> 3D NeuralLink brain and globe visualizations. Built using <strong>React 19, Express 5, and SQLite</strong>, it includes an extensive library of 40+ structured courses covering Assembly, Robotics, and hardware simulators.",
           "image": "english_learning_platform/stem_mainframe/landing_page.png",
+          "link_url": "https://irie-mind-ui.onrender.com/",
+          "link_text": "Launch Live Mainframe",
           "media_items": [
             {"src": "english_learning_platform/stem_mainframe/landing_page.png", "caption": "Main terminal screen for STEM career path training"}
           ]
