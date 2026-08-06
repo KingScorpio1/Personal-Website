@@ -70,7 +70,12 @@
     "category": "Software",
     "title": "Web Platforms & Education",
     "description": "Full-stack web applications designed to solve educational management problems.",
-    "images": ["teacher_software/snap.jpeg", "english_platform.png"],
+    "images": [
+      "teacher_software/snap.jpeg",
+      "english_learning_platform/english_platform.png",
+      "english_learning_platform/irie_learn/landing_page.png",
+      "english_learning_platform/stem_mainframe/landing_page.png"
+    ],
     "details": {
       "type": "project_suite",
       "intro": "Software solutions built to streamline workflows in educational environments.",
@@ -93,7 +98,27 @@
         {
           "title": "English Learning Platform",
           "description": "Interactive learning management system designed to help students improve English skills through gamified lessons.",
-          "image": "english_platform.png"
+          "image": "english_learning_platform/english_platform.png"
+        },
+        {
+          "title": "Irie Learn Bilingual 2030 Portal",
+          "description": "Interactive learning management system designed to help students improve English skills through gamified lessons. This is version 2 of the previous platform.",
+          "image": "english_learning_platform/irie_learn/landing_page.png",
+          "media_items": [
+            {"src": "english_learning_platform/irie_learn/landing_page.png", "caption": "Landing Page & Main Title Portal"},
+            {"src": "english_learning_platform/irie_learn/login_page.png", "caption": "Login Portal showing student profiles"},
+            {"src": "english_learning_platform/irie_learn/main_hub.png", "caption": "Main Adventure Hub and Snake Path progression"},
+            {"src": "english_learning_platform/irie_learn/arcade.png", "caption": "Arcade Collection featuring 44 games"},
+            {"src": "english_learning_platform/irie_learn/about.png", "caption": "About the Bilingual 2030 pedagogical curriculum"}
+          ]
+        },
+        {
+          "title": "_STEM_MAINFRAME_INIT",
+          "description": "Interactive learning management system designed to help students improve career skills through gamified lessons.",
+          "image": "english_learning_platform/stem_mainframe/landing_page.png",
+          "media_items": [
+            {"src": "english_learning_platform/stem_mainframe/landing_page.png", "caption": "Main terminal screen for STEM career path training"}
+          ]
         }
       ]
     }
