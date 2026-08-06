@@ -255,101 +255,108 @@
     <div class="social-section">
         <h2 class="section-title">👤 Personal & Tipsy Bartending</h2>
         
-        {% if authorized %}
-            <!-- UNLOCKED CONTENT -->
-            <div class="social-grid">
-                <!-- Personal Instagram -->
-                <div class="social-card">
-                    <h3>Instagram</h3>
-                    <!-- div style="height: 120px; display: flex; align-items: center; justify-content: center; background: #222; border-radius: 8px; margin: 10px auto; width: 120px;">
-                        <span style="font-size: 3rem;">YT</span>
-                    </div -->
-                    <img src="{{ url_for('static', filename='img/sulesmith_instagram.jpeg') }}" alt="QR Code" class="qr-code">
-                    <div class="copy-container">
-                        <a href="https://www.instagram.com/king.skully?igsh=cjVhZTJmMjVqbXVl" target="_blank" class="social-link">@king.skully</a>
-                        <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">🔗</button>
-                    </div>
-                </div>
-
-                <!-- Personal Threads -->
-                <div class="social-card">
-                    <h3>Threads</h3>
-                    <!-- div style="height: 120px; display: flex; align-items: center; justify-content: center; background: #222; border-radius: 8px; margin: 10px auto; width: 120px;">
-                        <span style="font-size: 3rem;">YT</span>
-                    </div -->
-                    <img src="{{ url_for('static', filename='img/sulesmith_threads.jpeg') }}" alt="QR Code" class="qr-code">
-                    <div class="copy-container">
-                        <a href="https://www.threads.com/@king.skully" target="_blank" class="social-link">@king.skully</a>
-                        <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">🔗</button>
-                    </div>
-                </div>
-
-                <!-- Personal TikTok -->
-                <div class="social-card">
-                    <h3>TikTok</h3>
-                    <!-- div style="height: 120px; display: flex; align-items: center; justify-content: center; background: #222; border-radius: 8px; margin: 10px auto; width: 120px;">
-                        <span style="font-size: 3rem;">YT</span>
-                    </div -->
-                    <img src="{{ url_for('static', filename='img/irieroots_tiktok.jpeg') }}" alt="TikTok QR" class="qr-code">
-                    <div class="copy-container">
-                        <a href="https://www.tiktok.com/@tipsy828?_r=1&_t=ZS-93koKMzmcvI" target="_blank" class="social-link">@tipsy828</a>
-                        <button onclick="copyToClipboard('tipsy828', this)" class="copy-btn" title="Copy Handle">🔗</button>
-                    </div>
-                </div>
-
-                <!-- Tipsy Facebook -->
-                <div class="social-card">
-                    <h3>Tipsy Bartending</h3>
-                    <div style="height: 120px; display: flex; align-items: center; justify-content: center; background: #222; border-radius: 8px; margin: 10px auto; width: 120px;">
-                        <span style="font-size: 3rem;">🍸</span>
-                    </div>
-                    <div class="copy-container">
-                        <a href="https://www.facebook.com/share/17rjJQvNx6/" target="_blank" class="social-link">Visit Page</a>
-                        <button onclick="copyToClipboard('https://www.facebook.com/share/17rjJQvNx6/', this)" class="copy-btn" title="Copy Link">🔗</button>
-                    </div>
+        <!-- UNLOCKED CONTENT -->
+        <div id="unlocked-section" class="social-grid" style="display: none;">
+            <!-- Personal Instagram -->
+            <div class="social-card">
+                <h3>Instagram</h3>
+                <img src="{{ url_for('static', filename='img/sulesmith_instagram.jpeg') }}" alt="QR Code" class="qr-code">
+                <div class="copy-container">
+                    <a href="https://www.instagram.com/king.skully?igsh=cjVhZTJmMjVqbXVl" target="_blank" class="social-link">@king.skully</a>
+                    <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">🔗</button>
                 </div>
             </div>
 
-        {% else %}
-            <!-- LOCKED CONTENT -->
-            <div class="locked-container">
+            <!-- Personal Threads -->
+            <div class="social-card">
+                <h3>Threads</h3>
+                <img src="{{ url_for('static', filename='img/sulesmith_threads.jpeg') }}" alt="QR Code" class="qr-code">
+                <div class="copy-container">
+                    <a href="https://www.threads.com/@king.skully" target="_blank" class="social-link">@king.skully</a>
+                    <button onclick="copyToClipboard('king.skully', this)" class="copy-btn" title="Copy Handle">🔗</button>
+                </div>
+            </div>
+
+            <!-- Personal TikTok -->
+            <div class="social-card">
+                <h3>TikTok</h3>
+                <img src="{{ url_for('static', filename='img/irieroots_tiktok.jpeg') }}" alt="TikTok QR" class="qr-code">
+                <div class="copy-container">
+                    <a href="https://www.tiktok.com/@tipsy828?_r=1&_t=ZS-93koKMzmcvI" target="_blank" class="social-link">@tipsy828</a>
+                    <button onclick="copyToClipboard('tipsy828', this)" class="copy-btn" title="Copy Handle">🔗</button>
+                </div>
+            </div>
+
+            <!-- Tipsy Facebook -->
+            <div class="social-card">
+                <h3>Tipsy Bartending</h3>
+                <div style="height: 120px; display: flex; align-items: center; justify-content: center; background: #222; border-radius: 8px; margin: 10px auto; width: 120px;">
+                    <span style="font-size: 3rem;">🍸</span>
+                </div>
+                <div class="copy-container">
+                    <a href="https://www.facebook.com/share/17rjJQvNx6/" target="_blank" class="social-link">Visit Page</a>
+                    <button onclick="copyToClipboard('https://www.facebook.com/share/17rjJQvNx6/', this)" class="copy-btn" title="Copy Link">🔗</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOCKED CONTENT -->
+        <div id="locked-section" class="locked-container" style="display: flex;">
+            
+            <!-- 1. Request Access (Sends Email) -->
+            <div class="auth-box">
+                <h3>🔒 Request Access</h3>
+                <p>Enter your email below to request an access code. I will review it and email you back.</p>
                 
-                <!-- 1. Request Access (Sends Email) -->
-                <div class="auth-box">
-                    <h3>🔒 Request Access</h3>
-                    <p>Enter your email below to request an access code. I will review it and email you back.</p>
-                    
-                    <!-- REPLACE THE URL BELOW WITH YOUR FORMSPREE URL -->
-                    <form action="https://formspree.io/f/xwvnprkv" method="POST">
-                        <input type="email" name="email" placeholder="Your Email Address" required>
-                        <textarea name="message" placeholder="Quick note (optional)" style="width:100%; background:#222; border:1px solid #444; color:white; border-radius:5px; margin-bottom:10px;"></textarea>
-                        <button type="submit" class="btn-auth btn-request">Send Request</button>
-                    </form>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- 2. Enter Code (Unlocks Site) -->
-                <div class="auth-box">
-                    <h3>🔑 Enter Code</h3>
-                    <p>Already have a code? Enter it below to unlock.</p>
-                    
-                    {% if error %}
-                        <div class="error-msg">{{ error }}</div>
-                    {% endif %}
-
-                    <form method="POST">
-                        <input type="text" name="access_code" placeholder="Enter Access Code" required>
-                        <button type="submit" class="btn-auth btn-unlock">Unlock</button>
-                    </form>
-                </div>
-
+                <form action="https://formspree.io/f/xwvnprkv" method="POST">
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <textarea name="message" placeholder="Quick note (optional)" style="width:100%; background:#222; border:1px solid #444; color:white; border-radius:5px; margin-bottom:10px;"></textarea>
+                    <button type="submit" class="btn-auth btn-request">Send Request</button>
+                </form>
             </div>
-        {% endif %}
+
+            <div class="divider"></div>
+
+            <!-- 2. Enter Code (Unlocks Site) -->
+            <div class="auth-box">
+                <h3>🔑 Enter Code</h3>
+                <p>Already have a code? Enter it below to unlock.</p>
+                
+                <div id="static-error-msg" class="error-msg" style="display: none;">Incorrect Access Code.</div>
+
+                <form onsubmit="verifyAccessCode(event)">
+                    <input type="text" id="access_code_input" placeholder="Enter Access Code" required>
+                    <button type="submit" class="btn-auth btn-unlock">Unlock</button>
+                </form>
+            </div>
+
+        </div>
     </div>
 </div>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const authorized = localStorage.getItem('authorized') === 'true';
+        if (authorized) {
+            document.getElementById('unlocked-section').style.display = 'grid';
+            document.getElementById('locked-section').style.display = 'none';
+        } else {
+            document.getElementById('unlocked-section').style.display = 'none';
+            document.getElementById('locked-section').style.display = 'flex';
+        }
+    });
+
+    function verifyAccessCode(event) {
+        event.preventDefault();
+        const code = document.getElementById('access_code_input').value.trim();
+        if (code === 'IRIE2026') {
+            localStorage.setItem('authorized', 'true');
+            window.location.reload();
+        } else {
+            document.getElementById('static-error-msg').style.display = 'block';
+        }
+    }
+
     function copyToClipboard(text, button) {
         navigator.clipboard.writeText(text).then(() => {
             const originalIcon = button.innerText;

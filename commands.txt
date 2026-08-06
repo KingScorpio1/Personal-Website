@@ -1,0 +1,17 @@
+# 1. Activate your virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# 2. Check what files you changed
+git status
+
+# 3. Stage all changes
+git add .
+
+# 4. Commit with a message describing what you did
+git commit -m "Added certification gallery and updated JSON data"
+
+# 5. Push to GitHub
+git push origin main
