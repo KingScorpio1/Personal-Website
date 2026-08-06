@@ -102,7 +102,7 @@
         },
         {
           "title": "Irie Learn Bilingual 2030 Portal",
-          "description": "Interactive learning management system designed to help students improve English skills through gamified lessons. This is version 2 of the previous platform.",
+          "description": "<strong>Irie Learn</strong> is a world-class, gamified English Learning Management System (LMS) designed for ESL students in Taiwan. Combining a custom 3D Adventure map and progression paths, it features a massive suite of 35+ interactive mini-games (such as <em>Syllable Ninja</em>, <em>Tense Crafter</em>, and <em>Floppy Chicken</em>) and RPG Boss Battles. Built with a responsive <strong>React 18 + Tailwind CSS</strong> client and backed by a <strong>Supabase</strong> cloud datastore with real-time class scoreboards, it includes an AI pedagogical progress summarizer powered by OpenAI GPT-4o-mini.",
           "image": "english_learning_platform/irie_learn/landing_page.png",
           "media_items": [
             {"src": "english_learning_platform/irie_learn/landing_page.png", "caption": "Landing Page & Main Title Portal"},
@@ -114,7 +114,7 @@
         },
         {
           "title": "_STEM_MAINFRAME_INIT",
-          "description": "Interactive learning management system designed to help students improve career skills through gamified lessons.",
+          "description": "<strong>_STEM_MAINFRAME_INIT</strong> (CodeMaster) is a high-fidelity interactive coding education platform. Featuring an immersive hacker-themed terminal UI, it provides real-time in-browser code execution for Python, JavaScript, and C++ via Monaco Editor sandboxes. The platform is enriched with interactive <strong>Three.js</strong> 3D NeuralLink brain and globe visualizations. Built using <strong>React 19, Express 5, and SQLite</strong>, it includes an extensive library of 40+ structured courses covering Assembly, Robotics, and hardware simulators.",
           "image": "english_learning_platform/stem_mainframe/landing_page.png",
           "media_items": [
             {"src": "english_learning_platform/stem_mainframe/landing_page.png", "caption": "Main terminal screen for STEM career path training"}
