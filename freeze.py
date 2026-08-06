@@ -2,6 +2,12 @@ import os
 import shutil
 import re
 import json
+import werkzeug
+
+# Monkey-patch Werkzeug version for Flask test client compatibility in Python 3.14
+if not hasattr(werkzeug, '__version__'):
+    werkzeug.__version__ = "3.0.1"
+
 from app import app
 
 # Initialize the Flask test client
