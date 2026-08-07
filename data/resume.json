@@ -1,11 +1,12 @@
 {
   "name": "Sule Smith",
   "title": "Mechanical Engineer",
-  "summary": "I'm a seasoned mechanical engineer passionate about tackling challenges and driving innovation. Proficient in CAD and design software, I excel at turning concepts into tangible solutions. With a collaborative approach, I thrive on teamwork and communication across diverse backgrounds. Eager to stay abreast of new technologies, I'm committed to personal and professional growth. Excited to further contribute value and innovation to the company.",
+  "summary": "Mechatronics Engineer with a 4.0 GPA and hands-on experience in semiconductor vacuum processes (PVD/CVD) and industrial PLC automation. Proven ability to reduce equipment downtime and lead award-winning robotics teams. Eager to bring my expertise in 3D modeling and control logicto advanced manufacturing environments.",
   "contact": {
     "phone": "+886909802690",
     "email": "smithsule63@gmail.com",
-    "address": "701台南市東區府東街203號"
+    "address": "701台南市東區府東街203號",
+    "status": "Marriage Permit (work eligible)"
   },
   "technical_skills": [
     "SolidWorks & AutoCAD",
@@ -20,7 +21,8 @@
     {"name": "Mandarin", "level": "Intermediate"},
     {"name": "Spanish", "level": "Intermediate"},
     {"name": "Japanese", "level": "Basic"},
-    {"name": "Korean", "level": "Basic"}
+    {"name": "German", "level": "Basic"},
+    {"name": "Dutch", "level": "Basic"}
   ],
   "tools": [
     "VS Code",
@@ -39,13 +41,13 @@
   "education": [
     {
       "institution": "Southern Taiwan University of Science and Technology",
-      "degree": "Master of Mechatronics Engineering",
+      "degree": "Masters in Mechatronics Engineering",
       "year": "2024 - 2026 (Expected)",
       "gpa": "4.0"
     },
     {
       "institution": "Kun Shan University",
-      "degree": "Bachelor's in Mechanical Engineering",
+      "degree": "Bachelors in Mechanical Engineering",
       "year": "2020 – 2024",
       "gpa": "3.70"
     }
@@ -55,10 +57,10 @@
       "job_title": "Part-time Internship",
       "company": "iDABET",
       "location": "Kaohsiung, Taiwan",
-      "years": "Mar 2025–Aug 2025",
+      "years": "Mar 2025–Aug 2026",
       "description": [
-        "Analyzing semiconductor processes including PVD, CVD, and ALD.",
-        "Gaining hands-on experience with advanced semiconductor coating techniques and cleanroom protocols."
+        "Operated and monitored high-vacuum semiconductor equipment for PVD, CVD, and ALD processes.",
+        "Handled 20 wafers per week in a Class 10000 cleanroomenvironment."
       ]
     },
     {
@@ -67,9 +69,9 @@
       "location": "Tainan, Taiwan",
       "years": "Dec 2023 – Aug 2024",
       "description": [
-        "Designed 3D models and engineering drawings using SolidWorks for manufacturing equipment.",
-        "Programmed PLC control logic for industrial automation systems to improve line efficiency.",
-        "Performed onsite troubleshooting and maintenance of jobsite machinery to reduce downtime."
+        "Designed and generated 2D/3D engineering drawings for over 500 mechanical components using SolidWorks, ensuring a 95% firsttime-right manufacturing rate.",
+        "Programmed control logic using Mitsubishi for 3 automated systems, improving process cycle times by 0.5 seconds.",
+        "Troubleshot and maintained 8 industrial machines, reducing average equipment downtime by 5% and boosting overall production efficiency by 10%."
       ]
     },
     {
@@ -78,9 +80,9 @@
       "location": "Tainan, Taiwan",
       "years": "May 2020 – Present",
       "description": [
-        "Developing and teaching curriculum for Robotics, Minecraft Education, and LEGO Engineering.",
-        "Managing classroom activities and coordinating STEM events for the institute.",
-        "Translating complex engineering concepts into accessible lessons for students."
+        "Designed and taught applied STEM curricula to 100+ students ages 6-13, resulting in a 90% improvement in technical vocabulary retention.",
+        "Organized and coordinated events for customers with the institute staff.",
+        "Maintained clear communication with students and parents on progress."
       ]
     },
     {
@@ -89,9 +91,9 @@
       "location": "Belize City, Belize",
       "years": "Aug 2018 – Jan 2020",
       "description": [
-        "Managed showroom inventory and coordinated logistics for client deliveries.",
-        "Executed precise assembly of complex modular furniture systems based on technical schematics.",
-        "Resolved client issues and maintained high service standards in a fast-paced retail environment."
+        "Solved problems effectively both independently and in teams.",
+        "Maintained a friendly, punctual, and hardworking attitude.",
+        "Efficiently assembled and disassembled all showroom furniture."
       ]
     }
   ],
@@ -108,6 +110,10 @@
     },
     {
       "title": "Development of Hexapod Assembler bot",
+      "role": "Personal R&D"
+    },
+    {
+      "title": "Irie Learn Platform",
       "role": "Personal R&D"
     }
   ]
