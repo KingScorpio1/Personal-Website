@@ -1,5 +1,32 @@
 [
   {
+    "title": "Certificate of Excellence (1st Place)",
+    "issuer": "Metal Industries Research & Development Centre (MIRDC)",
+    "date": "August 2026",
+    "has_dual_lang": true,
+    "image_en": "img/certs/mirdc_excellence_2026_en.png",
+    "image_zh": "img/certs/mirdc_excellence_2026_zh.png",
+    "description": "Awarded 1st place for outstanding performance in the Practical Project Final Presentation (iDABET Project)."
+  },
+  {
+    "title": "Certificate of Completion",
+    "issuer": "Metal Industries Research & Development Centre (MIRDC)",
+    "date": "August 2026",
+    "has_dual_lang": true,
+    "image_en": "img/certs/mirdc_completion_2026_en.png",
+    "image_zh": "img/certs/mirdc_completion_2026_zh.png",
+    "description": "Completed training in Semiconductor Industry Vacuum Equipment and AI Control Applications."
+  },
+  {
+    "title": "Semiconductor & AI Competency Certification",
+    "issuer": "Industrial Development Administration, Ministry of Economic Affairs (MOEA)",
+    "date": "July 2026",
+    "has_dual_lang": true,
+    "image_en": "img/certs/semiconductor_talent_2026_en.png",
+    "image_zh": "img/certs/semiconductor_talent_2026_zh.png",
+    "description": "Successfully completed advanced training in Semiconductor and AI Fundamental Applications under the Innovation and Development Application-Driven Semiconductor Elite Talent Project, passing the General Education Competency Certification Examination with an Advanced Level score of 94."
+  },
+  {
     "title": "Certificate of Excellence (2nd Place)",
     "issuer": "Metal Industries Research & Development Centre (MIRDC)",
     "date": "August 2025",
