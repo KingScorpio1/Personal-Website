@@ -3,11 +3,11 @@ import json
 import os
 
 app = Flask(__name__)
-# A secret key is required to use sessions. In production, keep this secret!
-app.secret_key = 'sule-smith-secret-key-change-this-in-prod'
+# A secret key is required to use sessions. Set FLASK_SECRET_KEY in the environment for production.
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'dev-only-insecure-key')
 
-# SET YOUR SECRET ACCESS CODE HERE
-ACCESS_CODE = "IRIE2026" 
+# Set ACCESS_CODE in the environment for production.
+ACCESS_CODE = os.environ.get('ACCESS_CODE', 'IRIE2026')
 
 @app.route("/")
 def index():

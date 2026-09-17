@@ -61,6 +61,17 @@
           "title": "Dual-Axis Solar Tracker",
           "description": "Implemented two versions: LDR-based (Light Dependent Resistor) and Wi-Fi enabled for remote monitoring and efficiency tracking.",
           "image": "tracker.png"
+        },
+        {
+          "title": "IrieBlocky: Visual Blockly & Circuit Simulation Workbench",
+          "description": "A browser-based visual programming and electronics simulation IDE built for Arduino, ESP32, STM32, and Raspberry Pi with <strong>zero installation required</strong>. Combines a drag-and-drop <strong>Blockly</strong> workspace with bidirectional C++ code generation, a Wokwi-powered hardware simulator (45+ authentic components), a real-time multi-channel serial plotter/oscilloscope, an interactive HUD multimeter probe, and live circuit-health linting that catches short circuits and unprotected LEDs before they'd ever burn out real hardware. Also generates standards-compliant IEEE/IEC schematics with a categorized Bill of Materials, exportable as SVG or PDF.",
+          "link_url": "https://github.com/KingScorpio1/Irie-Blocky",
+          "link_text": "View on GitHub",
+          "media_items": [
+            {"src": "irie_blocky/workspace.png", "caption": "Blockly workspace wired to a live Arduino Uno circuit with real-time C++ code generation."},
+            {"src": "irie_blocky/example_loaded.png", "caption": "Traffic Light starter project: full wiring diagram and generated firmware, ready to simulate."},
+            {"src": "irie_blocky/schematic_view.png", "caption": "One-click IEEE/IEC schematic export with title block, ready for printing or a lab report."}
+          ]
         }
       ]
     }
@@ -123,11 +134,49 @@
           "link_url": "https://irie-mind-ui.onrender.com/",
           "link_text": "Launch Live Mainframe",
           "media_items": [
-            {"src": "english_learning_platform/stem_mainframe/landing_page.png", "caption": "Main terminal screen for STEM career path training"}
+            {"src": "english_learning_platform/stem_mainframe/landing_hero.png", "caption": "Hacker-terminal themed landing page with a live crypto/stock ticker and system telemetry feed."},
+            {"src": "english_learning_platform/stem_mainframe/landing_features.png", "caption": "Integrated subsystems: Coding Mainframe, Engineering Core, and Bio-Intelligence sectors."},
+            {"src": "english_learning_platform/stem_mainframe/login_terminal.png", "caption": "In-character 'System Login' terminal for student operatives."}
           ]
         }
       ]
     }
+  },
+  {
+    "id": "market-ai",
+    "category": "AI & FinTech",
+    "title": "AI Institutional Market Scanner & Trading Bot",
+    "description": "An autonomous trading system and analytics dashboard using Machine Learning, sentiment analysis, and real-time market data to detect anomalies and manage risk.",
+    "image": "market_ai/live_analysis.png",
+    "details": {
+      "type": "project_suite",
+      "intro": "Market AI is a Python-based research platform that pairs a live analytics dashboard with an autonomous scanning bot. It combines a RandomForest price predictor, an IsolationForest anomaly/whale detector, NLP news-sentiment scoring, and automated trailing stop-losses, all served through a real-time Streamlit interface with Plotly charting.",
+      "projects": [
+        {
+          "title": "Live Institutional Analysis",
+          "description": "Real-time multi-asset scanner (crypto via <strong>CCXT</strong>, stocks via <strong>yfinance</strong>) overlaying EMA 50/200, RSI, and detected whale-activity markers on an interactive Plotly chart, alongside an ML-generated trade signal, model-based crash-risk score, and NLP news sentiment score.",
+          "media_items": [
+            {"src": "market_ai/live_analysis.png", "caption": "Live BTC-USD chart with EMA overlays, RSI, whale-activity markers, and an AI-generated trade signal."}
+          ]
+        },
+        {
+          "title": "Strategy Backtesting",
+          "description": "Simulates the bot's rule-based and ML-assisted strategy over the trailing 365 days of historical data for any watchlist asset, before it ever risks paper (or real) capital.",
+          "media_items": [
+            {"src": "market_ai/strategy_backtest.png", "caption": "Strategy Backtest tab, ready to simulate a full year of trades for the selected asset."}
+          ]
+        },
+        {
+          "title": "Man vs. Machine Trading Arena",
+          "description": "A head-to-head paper-trading arena where a human trader manages a virtual portfolio alongside the autonomous bot, with equity, cash, and active positions tracked side-by-side via a Supabase-backed ledger.",
+          "media_items": [
+            {"src": "market_ai/man_vs_machine.png", "caption": "The Trading Arena: manual trade terminal and bot-vs-human equity comparison."}
+          ]
+        }
+      ]
+    },
+    "url": "#",
+    "link_text": "View Suite"
   },
   {
     "id": "android-apps",
